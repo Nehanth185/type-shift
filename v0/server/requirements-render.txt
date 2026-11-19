@@ -1,0 +1,12 @@
+# Slim install for Render's FREE web service (512 MB RAM, sleeps after 15 min, disk wiped on restart). See DEPLOY_RENDER.md.
+# Left out on purpose:
+#   piper-tts, faster-whisper   local TTS/STT: model files + RAM + slow cold start. /ask still answers in text;
+#                               /health shows tts "none", stt "none". (espeak-ng is not on Render's Python image.)
+#   sentence-transformers/torch ~1 GB, does not fit. Retrieval falls back to BM25. For embeddings on Render set
+#                               RETRIEVER=embed + EMBED_BASE_URL/EMBED_API_KEY (remote, no local model).
+#   numpy                       only used by local TTS/STT audio resampling, which is off here.
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+pillow>=10
+pypdf>=4

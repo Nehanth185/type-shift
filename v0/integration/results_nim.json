@@ -1,0 +1,424 @@
+{
+ "steps": [
+  {
+   "feature": "health/logs",
+   "step": "/health ok, worker auth on, request id echoed",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "auth",
+   "step": "no token -> 401",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "auth",
+   "step": "maria is locked to plant7: workspace demo -> 403",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "auth",
+   "step": "token decides identity (/whoami = maria @ plant7)",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "ready cards",
+   "step": "start_shift card on an empty memory",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "docs upload",
+   "step": "upload cp450_pump_manual_excerpt.pdf",
+   "status": "PASS",
+   "ms": 7,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "docs upload",
+   "step": "upload glasses_v0_bench_notes.md",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "docs upload",
+   "step": "upload scanned (image-only) PDF -> OCR text indexed",
+   "status": "PASS",
+   "ms": 1222,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "concurrency",
+   "step": "/health stays fast while a scanned PDF is OCR'd",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "docs upload",
+   "step": "list docs = 3 in plant7",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "ready cards",
+   "step": "see_machine CP-450 card",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "cited answer",
+   "step": "CP-450 discharge pressure -> 55-70 PSI, cites p.14",
+   "status": "PASS",
+   "ms": 404,
+   "model": "nim",
+   "detail": ""
+  },
+  {
+   "feature": "OCR doc answer",
+   "step": "answer from the scanned card (ISO VG 220), cites it",
+   "status": "PASS",
+   "ms": 739,
+   "model": "nim",
+   "detail": ""
+  },
+  {
+   "feature": "refusal",
+   "step": "forklift lug nut torque -> 'Not in your docs', no sources",
+   "status": "PASS",
+   "ms": 5,
+   "model": "nim",
+   "detail": ""
+  },
+  {
+   "feature": "guide mode",
+   "step": "start seal-swap guide: step 1/N, warning first",
+   "status": "PASS",
+   "ms": 5,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "guide mode",
+   "step": "next x6: steps 1..6 in order, then finished",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "guide mode",
+   "step": "prev -> step N-1",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "guide mode",
+   "step": "'Done, log it' logs the job and closes the guide",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "guide mode",
+   "step": "guide from the scanned card (OCR'd numbered steps)",
+   "status": "PASS",
+   "ms": 5,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "photo + docs",
+   "step": "gauge photo + question (real model) -> answer or confirm prompt",
+   "status": "PASS",
+   "ms": 4729,
+   "model": "nim",
+   "detail": ""
+  },
+  {
+   "feature": "photo + docs",
+   "step": "real model's photo answer never states an unverified number as fact",
+   "status": "PASS",
+   "ms": null,
+   "model": "nim",
+   "detail": ""
+  },
+  {
+   "feature": "photo + docs",
+   "step": "photo only (no question) -> marked 'Not from your docs'",
+   "status": "PASS",
+   "ms": 1111,
+   "model": "nim",
+   "detail": ""
+  },
+  {
+   "feature": "memory",
+   "step": "voice note saved",
+   "status": "PASS",
+   "ms": 8,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "ready cards",
+   "step": "CP-450 card recalls the note + today's seal swap",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "memory",
+   "step": "'what do you remember about me' -> count, no doc sources",
+   "status": "PASS",
+   "ms": 8,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "memory",
+   "step": "GET /memory lists only maria's items (asks, guide, job, note, context)",
+   "status": "PASS",
+   "ms": 5,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "memory",
+   "step": "'forget that' deletes the newest item (the note)",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "privacy",
+   "step": "w2 cannot see or delete maria's memory",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "memory",
+   "step": "maria deletes one item",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "ready cards",
+   "step": "open_job card (long label stays <= 40 chars)",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "v0 glasses (fake_device)",
+   "step": "photo + typed question -> hud_text <= 40 chars + 16 kHz WAV",
+   "status": "PASS",
+   "ms": 3855,
+   "model": "nim",
+   "detail": ""
+  },
+  {
+   "feature": "v0 glasses (fake_device)",
+   "step": "v0 photo answers are grounded in the team docs",
+   "status": "GAP",
+   "ms": null,
+   "model": "",
+   "detail": "GAP: the firmware's /ask path never searches the docs (no sources, no memory, no guide)"
+  },
+  {
+   "feature": "v0 glasses (fake_device)",
+   "step": "photo only, inline PCM audio",
+   "status": "PASS",
+   "ms": 2510,
+   "model": "nim",
+   "detail": ""
+  },
+  {
+   "feature": "v0 glasses (fake_device)",
+   "step": "spoken question (Piper WAV) -> Whisper -> answer",
+   "status": "PASS",
+   "ms": 1910,
+   "model": "nim",
+   "detail": ""
+  },
+  {
+   "feature": "v0 glasses (fake_device)",
+   "step": "no token in worker mode -> refused (G43 fix: was open)",
+   "status": "PASS",
+   "ms": 89,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "v0 glasses (fake_device)",
+   "step": "/last photo needs a token in worker mode",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "Halo bridge",
+   "step": "on_ask -> real /ask -> paged 14-char rows, cited",
+   "status": "PASS",
+   "ms": 1045,
+   "model": "nim",
+   "detail": ""
+  },
+  {
+   "feature": "Halo bridge",
+   "step": "tap next / tap cancel",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "companion app",
+   "step": "settings (token) + ask -> HUD = server answer, sources listed",
+   "status": "PASS",
+   "ms": 520,
+   "model": "nim",
+   "detail": ""
+  },
+  {
+   "feature": "companion app",
+   "step": "memory view shows maria's items",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "companion app",
+   "step": "no page errors",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "rate limit",
+   "step": "rapid taps -> 429 + Retry-After",
+   "status": "PASS",
+   "ms": 44,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "rate limit",
+   "step": "other endpoints still work while limited (GET /memory 200)",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "Mentra miniapp",
+   "step": "harness_real.ts vs this server: 24/24",
+   "status": "PASS",
+   "ms": 21884,
+   "model": "nim",
+   "detail": ""
+  },
+  {
+   "feature": "health/logs",
+   "step": "request log: JSON line per request, client X-Request-ID kept",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "health/logs",
+   "step": "no worker token ever written to the server log",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  }
+ ],
+ "hud_checked": 26,
+ "hud_violations": [],
+ "meta": {
+  "server_boot_ms": 1837,
+  "health": {
+   "status": "ok",
+   "version": "0.1.0",
+   "uptime_s": 0.2,
+   "llm_backend": "nim",
+   "docs_indexed": 3,
+   "ok": true,
+   "provider": "nim",
+   "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+   "tts": "piper:en_US-lessac-low.onnx",
+   "stt": "faster-whisper:tiny.en",
+   "token_required": false,
+   "auth": "worker",
+   "retriever": "bm25",
+   "db": "/tmp/g43-shift-47oeoyop/g.db"
+  },
+  "llm": "nim",
+  "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+  "ocr_upload_ms": 1222,
+  "cited_answer": [
+   "55-70 PSI",
+   "Normal discharge pressure",
+   "Source: CP-450 Pump Manual p.14"
+  ],
+  "nim_gauge": {
+   "answer_hud": [
+    "55-70 PSI normal",
+    "Read gauge after 2 min",
+    "Source: CP-450 Pump Manual p.14"
+   ],
+   "answer_full": "Normal discharge pressure is 55-70 PSI. Read the pressure on the discharge gauge with the pump running for at least 2 minutes. I can't read the gauge clearly enough to tell if your pressure is normal.",
+   "needs_confirm": null,
+   "unverified_numbers": null
+  },
+  "whisper_heard": "What is the pressure on the sketch?",
+  "requests_logged": 109
+ },
+ "summary": {
+  "pass": 45,
+  "fail": 0,
+  "skip": 0,
+  "gap": 1,
+  "llm": "nim",
+  "hud_responses_checked": 26,
+  "hud_violations": 0,
+  "wall_s": 53.6,
+  "ts": "2026-11-13 15:34:53"
+ }
+}

@@ -1,0 +1,109 @@
+{
+ "summary": "26/26 passed",
+ "results": [
+  {
+   "name": "helpers: clampHud enforces 3 lines x 7 words",
+   "ok": true
+  },
+  {
+   "name": "helpers: bytesToBase64 matches Node",
+   "ok": true
+  },
+  {
+   "name": "helpers: pickMode / guideCommand",
+   "ok": true
+  },
+  {
+   "name": "config: worker id defaults to the Mentra user id",
+   "ok": true
+  },
+  {
+   "name": "privacy: mic not subscribed before a tap",
+   "ok": true
+  },
+  {
+   "name": "tap arms: HUD says Listening, mic subscribed",
+   "ok": true
+  },
+  {
+   "name": "interim transcript ignored",
+   "ok": true
+  },
+  {
+   "name": "final transcript -> /ask -> HUD answer",
+   "ok": true
+  },
+  {
+   "name": "HUD frame obeys 3 lines x 7 words, 500x220 box, maxLines 3",
+   "ok": true
+  },
+  {
+   "name": "privacy: mic unsubscribed after the question",
+   "ok": true
+  },
+  {
+   "name": "display glasses: answer not spoken by default",
+   "ok": true
+  },
+  {
+   "name": "request shape: workspace, worker, question, mode=answer, no image",
+   "ok": true
+  },
+  {
+   "name": "over-long server HUD clamped before render",
+   "ok": true
+  },
+  {
+   "name": "guide phrase -> guide mode step 1/6",
+   "ok": true
+  },
+  {
+   "name": "swipe up -> next step",
+   "ok": true
+  },
+  {
+   "name": "swipe down -> previous step",
+   "ok": true
+  },
+  {
+   "name": "tap + say 'next' -> next step",
+   "ok": true
+  },
+  {
+   "name": "tap + say 'stop' -> guide ends, display cleared",
+   "ok": true
+  },
+  {
+   "name": "long press clears display and closes mic",
+   "ok": true
+  },
+  {
+   "name": "ready card (see_machine) shown on HUD",
+   "ok": true
+  },
+  {
+   "name": "settings persist via session.storage",
+   "ok": true
+  },
+  {
+   "name": "camera glasses: photo sent as image_b64",
+   "ok": true
+  },
+  {
+   "name": "no display: answer spoken, nothing rendered",
+   "ok": true
+  },
+  {
+   "name": "server unreachable -> HUD error, no crash",
+   "ok": true
+  },
+  {
+   "name": "testServer reports failure",
+   "ok": true
+  },
+  {
+   "name": "no server URL -> tells worker to set it in the phone app",
+   "ok": true
+  }
+ ]
+}

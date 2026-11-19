@@ -1,0 +1,6 @@
+firmware/glasses_v0/secrets.h
+server/.env
+server/logs/
+server/__pycache__/
+server/answer.wav
+server/data/

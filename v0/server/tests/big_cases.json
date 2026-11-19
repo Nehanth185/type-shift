@@ -1,0 +1,342 @@
+[
+ {
+  "id": 1,
+  "q": "Coil is frosting up and suction is 98. What does that point to?",
+  "doc": "hvac",
+  "page": "1",
+  "any": [
+   "leak"
+  ]
+ },
+ {
+  "id": 2,
+  "q": "How much refrigerant goes back in after the repair?",
+  "doc": "hvac",
+  "page": "1",
+  "any": [
+   "9.5"
+  ]
+ },
+ {
+  "id": 3,
+  "q": "Compressor buzzes but won't turn. What part do I swap?",
+  "doc": "hvac",
+  "page": "2",
+  "any": [
+   "capacitor"
+  ]
+ },
+ {
+  "id": 4,
+  "q": "How tight should the fan drive strap be?",
+  "doc": "hvac",
+  "page": "3",
+  "any": [
+   "0.5"
+  ]
+ },
+ {
+  "id": 5,
+  "q": "What size air filters does this unit take?",
+  "doc": "hvac",
+  "page": "4",
+  "any": [
+   "20x25x4"
+  ]
+ },
+ {
+  "id": 6,
+  "q": "When is the filter considered clogged?",
+  "doc": "hvac",
+  "page": "4",
+  "any": [
+   "0.8"
+  ]
+ },
+ {
+  "id": 7,
+  "q": "What do I do before opening the panel door?",
+  "doc": "elec",
+  "page": "1",
+  "any": [
+   "lock"
+  ]
+ },
+ {
+  "id": 8,
+  "q": "What torque for the 60 amp breaker terminals?",
+  "doc": "elec",
+  "page": "2",
+  "any": [
+   "25"
+  ]
+ },
+ {
+  "id": 9,
+  "q": "How hot is too hot compared to the neighboring terminals?",
+  "doc": "elec",
+  "page": "3",
+  "any": [
+   "15"
+  ]
+ },
+ {
+  "id": 10,
+  "q": "What protective gear for the shock and blast hazard here?",
+  "doc": "elec",
+  "page": "4",
+  "any": [
+   "category 2"
+  ]
+ },
+ {
+  "id": 11,
+  "q": "Under what load should I do the heat camera inspection?",
+  "doc": "elec",
+  "page": "3",
+  "any": [
+   "40"
+  ]
+ },
+ {
+  "id": 12,
+  "q": "Machine sat overnight. What should I run first?",
+  "doc": "cnc",
+  "page": "1",
+  "any": [
+   "10 minutes"
+  ]
+ },
+ {
+  "id": 13,
+  "q": "How do I set the length of a new cutter?",
+  "doc": "cnc",
+  "page": "2",
+  "any": [
+   "Z Face"
+  ]
+ },
+ {
+  "id": 14,
+  "q": "What's the right mix ratio for the cutting fluid?",
+  "doc": "cnc",
+  "page": "3",
+  "any": [
+   "8 percent"
+  ]
+ },
+ {
+  "id": 15,
+  "q": "Servo overload alarm, what now?",
+  "doc": "cnc",
+  "page": "4",
+  "any": [
+   "feed rate"
+  ]
+ },
+ {
+  "id": 16,
+  "q": "How often do I clean oil off the top of the sump?",
+  "doc": "cnc",
+  "page": "3",
+  "any": [
+   "weekly"
+  ]
+ },
+ {
+  "id": 17,
+  "q": "What's the lowest safe cell voltage on the truck battery?",
+  "doc": "forklift",
+  "page": "1",
+  "any": [
+   "1.75"
+  ]
+ },
+ {
+  "id": 18,
+  "q": "When are the tines too worn to use?",
+  "doc": "forklift",
+  "page": "2",
+  "any": [
+   "10 percent"
+  ]
+ },
+ {
+  "id": 19,
+  "q": "What pressure for the air-filled wheels?",
+  "doc": "forklift",
+  "page": "3",
+  "any": [
+   "115"
+  ]
+ },
+ {
+  "id": 20,
+  "q": "Max weight I can lift?",
+  "doc": "forklift",
+  "page": "4",
+  "any": [
+   "5000"
+  ]
+ },
+ {
+  "id": 21,
+  "q": "How high can I raise the load?",
+  "doc": "forklift",
+  "page": "4",
+  "any": [
+   "130"
+  ]
+ },
+ {
+  "id": 22,
+  "q": "Which gas mix for steel?",
+  "doc": "weld",
+  "page": "1",
+  "any": [
+   "75/25"
+  ]
+ },
+ {
+  "id": 23,
+  "q": "What voltage for quarter inch plate?",
+  "doc": "weld",
+  "page": "2",
+  "any": [
+   "18"
+  ]
+ },
+ {
+  "id": 24,
+  "q": "Little holes in my weld. Why?",
+  "doc": "weld",
+  "page": "3",
+  "any": [
+   "gas"
+  ]
+ },
+ {
+  "id": 25,
+  "q": "How long do I stay watching for sparks after finishing?",
+  "doc": "weld",
+  "page": "4",
+  "any": [
+   "30 minutes"
+  ]
+ },
+ {
+  "id": 26,
+  "q": "Where is the extinguisher?",
+  "doc": "weld",
+  "page": "4",
+  "any": [
+   "north wall"
+  ]
+ },
+ {
+  "id": 27,
+  "q": "What microfarad rating for the run cap?",
+  "doc": "hvac",
+  "page": "2",
+  "any": [
+   "45/5"
+  ]
+ },
+ {
+  "id": 28,
+  "q": "What about the main lugs torque?",
+  "doc": "elec",
+  "page": "2",
+  "any": [
+   "275"
+  ]
+ },
+ {
+  "id": 29,
+  "q": "How accurate must the tool length be versus the setup sheet?",
+  "doc": "cnc",
+  "page": "2",
+  "any": [
+   "0.002"
+  ]
+ },
+ {
+  "id": 30,
+  "q": "How far off square can the fork angle be?",
+  "doc": "forklift",
+  "page": "2",
+  "any": [
+   "3 degrees"
+  ]
+ },
+ {
+  "id": 31,
+  "q": "What is the cafeteria menu today?",
+  "doc": null,
+  "page": null,
+  "any": []
+ },
+ {
+  "id": 32,
+  "q": "Who is the plant manager?",
+  "doc": null,
+  "page": null,
+  "any": []
+ },
+ {
+  "id": 33,
+  "q": "What is the torque for the crane hook?",
+  "doc": null,
+  "page": null,
+  "any": []
+ },
+ {
+  "id": 34,
+  "q": "How do I reset the building fire alarm?",
+  "doc": null,
+  "page": null,
+  "any": []
+ },
+ {
+  "id": 35,
+  "q": "What is the PTO policy?",
+  "doc": null,
+  "page": null,
+  "any": []
+ },
+ {
+  "id": 36,
+  "q": "What oil does the air compressor use?",
+  "doc": null,
+  "page": null,
+  "any": []
+ },
+ {
+  "id": 37,
+  "q": "What is the wifi password?",
+  "doc": null,
+  "page": null,
+  "any": []
+ },
+ {
+  "id": 38,
+  "q": "How do I weld aluminum with TIG?",
+  "doc": null,
+  "page": null,
+  "any": []
+ },
+ {
+  "id": 39,
+  "q": "What is the boiler operating pressure?",
+  "doc": null,
+  "page": null,
+  "any": []
+ },
+ {
+  "id": 40,
+  "q": "How do I order safety glasses?",
+  "doc": null,
+  "page": null,
+  "any": []
+ }
+]

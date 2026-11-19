@@ -1,0 +1,260 @@
+{
+ "format": "worker-os/fault-tree@1",
+ "id": "tm5_pump",
+ "title": "TM 5-4320-274-14&P centrifugal pump set fault tree",
+ "models": [
+  "TM-5-4320-274",
+  "CP-TM5"
+ ],
+ "reviewed": false,
+ "drafted_by": "Hark (hand-written from fetched TM table 4-2)",
+ "note": "Real manual, 3 symptoms. reviewed=false until a technician checks it; priors are my estimates. Fault #2 (cavitation noise) is NOT in this manual, so no tree for it.",
+ "docs": {
+  "tm": {
+   "title": "TM 5-4320-274-14&P excerpt",
+   "file": "docs/tm5_4320_274_pump.md"
+  }
+ },
+ "gates": {
+  "loto": {
+   "hud": [
+    "\u26a0 Unplug power cable",
+    "Say 'unplugged' when done"
+   ],
+   "doc": "tm",
+   "page": "2",
+   "quote": "Make sure the electrical power cable is disconnected from the power source before attempting maintenance on the pump.",
+   "minutes": 2,
+   "enter": "locked",
+   "confirm": [
+    "unplugged",
+    "locked out",
+    "locked",
+    "disconnected",
+    "done",
+    "yes",
+    "ok"
+   ]
+  },
+  "run": {
+   "hud": [
+    "Run the pump",
+    "Say 'running' when ready"
+   ],
+   "doc": "tm",
+   "page": "21",
+   "quote": "Ascertain if pump is primed.",
+   "minutes": 2,
+   "enter": "running",
+   "confirm": [
+    "running",
+    "it's running",
+    "ready",
+    "yes",
+    "ok"
+   ]
+  }
+ },
+ "checks": [
+  {
+   "id": "primed",
+   "hud": "Pump primed?",
+   "kind": "yesno",
+   "doc": "tm",
+   "page": "21",
+   "quote": "Ascertain if pump is primed.",
+   "minutes": 1,
+   "needs": "any",
+   "ok_if": "yes"
+  },
+  {
+   "id": "suction_clog",
+   "hud": "Suction line clear?",
+   "kind": "yesno",
+   "doc": "tm",
+   "page": "21",
+   "quote": "Inspect suction line for clogging.",
+   "minutes": 5,
+   "needs": "loto",
+   "ok_if": "yes"
+  },
+  {
+   "id": "lift",
+   "hud": "Pump close to liquid?",
+   "kind": "yesno",
+   "doc": "tm",
+   "page": "21",
+   "quote": "Excessive suction lift.",
+   "minutes": 1,
+   "needs": "any",
+   "ok_if": "yes"
+  },
+  {
+   "id": "suction_air",
+   "hud": "Air leaks suction side?",
+   "kind": "yesno",
+   "doc": "tm",
+   "page": "21",
+   "quote": "Air leaks on suction side of pump.",
+   "minutes": 3,
+   "needs": "loto",
+   "ok_if": "no"
+  },
+  {
+   "id": "conn_air",
+   "hud": "Loose hose connections?",
+   "kind": "yesno",
+   "doc": "tm",
+   "page": "21",
+   "quote": "Check to see if air is entering pump body through loose connections.",
+   "minutes": 2,
+   "needs": "loto",
+   "ok_if": "no"
+  },
+  {
+   "id": "leak_seal",
+   "hud": "Wet near seals/valve?",
+   "kind": "yesno",
+   "doc": "tm",
+   "page": "21",
+   "quote": "Inspect for any visible leakage near seals or suction valve.",
+   "minutes": 1,
+   "needs": "any",
+   "ok_if": "no"
+  }
+ ],
+ "symptoms": [
+  {
+   "id": "no_water",
+   "name": "No water or low pressure",
+   "doc": "tm",
+   "page": "21",
+   "quote": "NO WATER OR INSUFFICIENT WATER OUTLET PRESSURE.",
+   "phrases": [
+    "no flow",
+    "no water",
+    "motor running no flow",
+    "low pressure",
+    "weak flow",
+    "insufficient pressure",
+    "pump not pumping",
+    "no water coming out"
+   ],
+   "causes": [
+    {
+     "id": "not_primed",
+     "name": "Pump not primed",
+     "prior": 0.35,
+     "expect": {
+      "primed": "bad"
+     },
+     "fix": "Prime pump",
+     "doc": "tm",
+     "page": "21",
+     "quote": "Prime pump."
+    },
+    {
+     "id": "clogged",
+     "name": "Suction line clogged",
+     "prior": 0.25,
+     "expect": {
+      "suction_clog": "bad"
+     },
+     "fix": "Clean the suction line",
+     "doc": "tm",
+     "page": "21",
+     "quote": "Remove the suction line, clean clogged area and replace on unit."
+    },
+    {
+     "id": "lift",
+     "name": "Suction lift too high",
+     "prior": 0.2,
+     "expect": {
+      "lift": "bad"
+     },
+     "fix": "Move pump closer to liquid",
+     "doc": "tm",
+     "page": "21",
+     "quote": "Locate pump closer to liquid."
+    },
+    {
+     "id": "air_suction",
+     "name": "Air leak, suction side",
+     "prior": 0.2,
+     "expect": {
+      "suction_air": "bad"
+     },
+     "fix": "Correct air leaks",
+     "doc": "tm",
+     "page": "21",
+     "quote": "Correct air leaks."
+    }
+   ]
+  },
+  {
+   "id": "pump_fails",
+   "name": "Pump fails to function",
+   "doc": "tm",
+   "page": "21",
+   "quote": "PUMP FAILS TO FUNCTION PROPERLY",
+   "phrases": [
+    "pump not working",
+    "pump fails",
+    "pump not working right",
+    "pump acting up",
+    "pump wont work",
+    "pump will not start",
+    "pump wont start",
+    "pump fails to run"
+   ],
+   "causes": [
+    {
+     "id": "loose_conn",
+     "name": "Air entering via loose hoses",
+     "prior": 0.6,
+     "expect": {
+      "conn_air": "bad"
+     },
+     "fix": "Tighten connections, fix hoses",
+     "doc": "tm",
+     "page": "21",
+     "quote": "Tighten loose connections and be certain hoses have no leaks."
+    }
+   ]
+  },
+  {
+   "id": "leaks",
+   "name": "Pump leaks in operation",
+   "doc": "tm",
+   "page": "21",
+   "quote": "PUMP LEAKS DURING OPERATION.",
+   "phrases": [
+    "pump leaks",
+    "leaking pump",
+    "water at the seal",
+    "leak near suction valve",
+    "dripping from pump",
+    "pump is leaking",
+    "pump leaking",
+    "leaking at the seal",
+    "dripping",
+    "water is leaking from the pump",
+    "pump is leaking"
+   ],
+   "causes": [
+    {
+     "id": "seal_leak",
+     "name": "Leak at seals/suction valve",
+     "prior": 0.8,
+     "expect": {
+      "leak_seal": "bad"
+     },
+     "fix": "Report to general support",
+     "doc": "tm",
+     "page": "21",
+     "quote": "Any evidence of leakage, notify general support."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+pillow>=10
+numpy>=1.24
+# Natural-sounding offline voice (recommended). Needs a voice file in voices/ (see README).
+piper-tts>=1.2
+# Optional: lets the glasses take spoken questions (offline, ~75 MB model downloads on first use)
+faster-whisper>=1.0
+# v1 work API: PDF text extraction for POST /docs
+pypdf>=4
+# Optional dense retrieval (RETRIEVER=embed). Pulls in PyTorch (~1 GB); BM25 works without it.
+# sentence-transformers>=3

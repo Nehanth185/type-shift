@@ -1,0 +1,205 @@
+{
+ "full": {
+  "rita_routine_mechanic": {
+   "warm": {
+    "n": 67,
+    "routine": 0.746,
+    "top1": 0.448,
+    "top3": 0.597,
+    "base1": 0.0,
+    "base3": 0.194
+   },
+   "cold": {
+    "n": 7,
+    "routine": 0.714,
+    "top1": 0.0,
+    "top3": 0.0,
+    "base1": 0.0,
+    "base3": 0.0
+   }
+  },
+  "ben_breakdown_tech": {
+   "warm": {
+    "n": 97,
+    "routine": 0.258,
+    "top1": 0.268,
+    "top3": 0.33,
+    "base1": 0.052,
+    "base3": 0.134
+   },
+   "cold": {
+    "n": 10,
+    "routine": 0.3,
+    "top1": 0.0,
+    "top3": 0.0,
+    "base1": 0.0,
+    "base3": 0.0
+   }
+  },
+  "nia_new_hire": {
+   "warm": {
+    "n": 67,
+    "routine": 0.761,
+    "top1": 0.448,
+    "top3": 0.612,
+    "base1": 0.06,
+    "base3": 0.224
+   },
+   "cold": {
+    "n": 7,
+    "routine": 0.714,
+    "top1": 0.0,
+    "top3": 0.0,
+    "base1": 0.0,
+    "base3": 0.0
+   }
+  },
+  "ALL (shifts 2-10)": {
+   "warm": {
+    "top1": 0.372,
+    "top3": 0.489,
+    "base1": 0.039,
+    "base3": 0.178,
+    "routine": 0.545,
+    "n": 231
+   }
+  }
+ },
+ "ablations": {
+  "sequence only": {
+   "rita_routine_mechanic": {
+    "warm": {
+     "n": 67,
+     "routine": 0.746,
+     "top1": 0.313,
+     "top3": 0.552,
+     "base1": 0.0,
+     "base3": 0.194
+    },
+    "cold": {
+     "n": 7,
+     "routine": 0.714,
+     "top1": 0.0,
+     "top3": 0.0,
+     "base1": 0.0,
+     "base3": 0.0
+    }
+   },
+   "ben_breakdown_tech": {
+    "warm": {
+     "n": 97,
+     "routine": 0.258,
+     "top1": 0.175,
+     "top3": 0.247,
+     "base1": 0.052,
+     "base3": 0.134
+    },
+    "cold": {
+     "n": 10,
+     "routine": 0.3,
+     "top1": 0.0,
+     "top3": 0.0,
+     "base1": 0.0,
+     "base3": 0.0
+    }
+   },
+   "nia_new_hire": {
+    "warm": {
+     "n": 67,
+     "routine": 0.761,
+     "top1": 0.388,
+     "top3": 0.507,
+     "base1": 0.06,
+     "base3": 0.224
+    },
+    "cold": {
+     "n": 7,
+     "routine": 0.714,
+     "top1": 0.0,
+     "top3": 0.0,
+     "base1": 0.0,
+     "base3": 0.0
+    }
+   },
+   "ALL (shifts 2-10)": {
+    "warm": {
+     "top1": 0.277,
+     "top3": 0.411,
+     "base1": 0.039,
+     "base3": 0.178,
+     "routine": 0.545,
+     "n": 231
+    }
+   }
+  },
+  "time of shift only": {
+   "rita_routine_mechanic": {
+    "warm": {
+     "n": 67,
+     "routine": 0.746,
+     "top1": 0.328,
+     "top3": 0.612,
+     "base1": 0.0,
+     "base3": 0.194
+    },
+    "cold": {
+     "n": 7,
+     "routine": 0.714,
+     "top1": 0.0,
+     "top3": 0.0,
+     "base1": 0.0,
+     "base3": 0.0
+    }
+   },
+   "ben_breakdown_tech": {
+    "warm": {
+     "n": 97,
+     "routine": 0.258,
+     "top1": 0.186,
+     "top3": 0.237,
+     "base1": 0.052,
+     "base3": 0.134
+    },
+    "cold": {
+     "n": 10,
+     "routine": 0.3,
+     "top1": 0.0,
+     "top3": 0.0,
+     "base1": 0.0,
+     "base3": 0.0
+    }
+   },
+   "nia_new_hire": {
+    "warm": {
+     "n": 67,
+     "routine": 0.761,
+     "top1": 0.328,
+     "top3": 0.567,
+     "base1": 0.06,
+     "base3": 0.224
+    },
+    "cold": {
+     "n": 7,
+     "routine": 0.714,
+     "top1": 0.0,
+     "top3": 0.0,
+     "base1": 0.0,
+     "base3": 0.0
+    }
+   },
+   "ALL (shifts 2-10)": {
+    "warm": {
+     "top1": 0.268,
+     "top3": 0.441,
+     "base1": 0.039,
+     "base3": 0.178,
+     "routine": 0.545,
+     "n": 231
+    }
+   }
+  }
+ },
+ "seed": 44,
+ "events": 255,
+ "synthetic": true
+}

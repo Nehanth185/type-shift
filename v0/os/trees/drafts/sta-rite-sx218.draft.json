@@ -1,0 +1,416 @@
+{
+ "format": "worker-os/fault-tree@1",
+ "id": "sta-rite-sx218",
+ "models": [
+  "Sta-Rite SX218"
+ ],
+ "reviewed": false,
+ "drafted_by": "nav_tree.parse_x_matrix (deterministic table parser, no model)",
+ "source": {
+  "title": "Sta-Rite SX218 Close Coupled Centrifugal Pump IOM (06/01/24)",
+  "page": "17",
+  "url": "https://www.pentair.com/content/dam/extranet/web/nam/sta-rite/manuals/sx218-close-coupled-motor-centrifugal-pump-iom.pdf"
+ },
+ "todo_for_reviewer": [
+  "check every X against the page image",
+  "write one check per cause (hud <=40 chars, kind, spec with page)",
+  "set priors (or leave equal)",
+  "add lockout gates",
+  "then set reviewed=true"
+ ],
+ "symptoms": [
+  {
+   "name": "Pump runs, but no water delivered",
+   "page": "17",
+   "causes": [
+    {
+     "col": "Mechanical:A",
+     "name": "Flow through pump completely or partially obstructed.",
+     "fix": "Locate and remove obstruction. Refer to repair instructions for disassembly.",
+     "page": "17",
+     "prior": 0.25
+    },
+    {
+     "col": "Mechanical:C",
+     "name": "Pump lost prime.",
+     "fix": "Reprime. Inspect suction system for air leaks.",
+     "page": "17",
+     "prior": 0.25
+    },
+    {
+     "col": "System:A",
+     "name": "Pressure required by system at design flow rate exceeds",
+     "fix": "partially closed valve in discharge piping system.",
+     "page": "17",
+     "prior": 0.25
+    },
+    {
+     "col": "System:B",
+     "name": "Obstruction in suction piping",
+     "fix": "Locate and remove obstruction.",
+     "page": "17",
+     "prior": 0.25
+    }
+   ]
+  },
+  {
+   "name": "Not enough water delivered",
+   "page": "17",
+   "causes": [
+    {
+     "col": "Electrical:C",
+     "name": "Low voltage at motor.",
+     "fix": "Running voltage across each leg of motor must be ±10% of nominal voltage shown on nameplate.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Electrical:D",
+     "name": "Motor leads improperly grouped for voltage.",
+     "fix": "Refer to lead grouping diagram on motor nameplate.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Electrical:I",
+     "name": "Frequency variation.",
+     "fix": "Check frequency of power system. Must be less than 5% variation from motor nameplate rating.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Mechanical:A",
+     "name": "Flow through pump completely or partially obstructed.",
+     "fix": "Locate and remove obstruction. Refer to repair instructions for disassembly.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Mechanical:B",
+     "name": "Wrong direction of rotation.",
+     "fix": "",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Mechanical:D",
+     "name": "Internal leakage.",
+     "fix": "Check impeller for wear of controlled clearances (See Repair Instructions).",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "System:A",
+     "name": "Pressure required by system at design flow rate exceeds",
+     "fix": "partially closed valve in discharge piping system.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "System:B",
+     "name": "Obstruction in suction piping",
+     "fix": "Locate and remove obstruction.",
+     "page": "17",
+     "prior": 0.125
+    }
+   ]
+  },
+  {
+   "name": "Not enough pressure",
+   "page": "17",
+   "causes": [
+    {
+     "col": "Electrical:C",
+     "name": "Low voltage at motor.",
+     "fix": "Running voltage across each leg of motor must be ±10% of nominal voltage shown on nameplate.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Electrical:D",
+     "name": "Motor leads improperly grouped for voltage.",
+     "fix": "Refer to lead grouping diagram on motor nameplate.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Electrical:I",
+     "name": "Frequency variation.",
+     "fix": "Check frequency of power system. Must be less than 5% variation from motor nameplate rating.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Mechanical:A",
+     "name": "Flow through pump completely or partially obstructed.",
+     "fix": "Locate and remove obstruction. Refer to repair instructions for disassembly.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Mechanical:B",
+     "name": "Wrong direction of rotation.",
+     "fix": "",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Mechanical:D",
+     "name": "Internal leakage.",
+     "fix": "Check impeller for wear of controlled clearances (See Repair Instructions).",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "System:A",
+     "name": "Pressure required by system at design flow rate exceeds",
+     "fix": "partially closed valve in discharge piping system.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "System:B",
+     "name": "Obstruction in suction piping",
+     "fix": "Locate and remove obstruction.",
+     "page": "17",
+     "prior": 0.125
+    }
+   ]
+  },
+  {
+   "name": "Excessive vibration",
+   "page": "17",
+   "causes": [
+    {
+     "col": "Electrical:I",
+     "name": "Frequency variation.",
+     "fix": "Check frequency of power system. Must be less than 5% variation from motor nameplate rating.",
+     "page": "17",
+     "prior": 0.167
+    },
+    {
+     "col": "Mechanical:A",
+     "name": "Flow through pump completely or partially obstructed.",
+     "fix": "Locate and remove obstruction. Refer to repair instructions for disassembly.",
+     "page": "17",
+     "prior": 0.167
+    },
+    {
+     "col": "Mechanical:B",
+     "name": "Wrong direction of rotation.",
+     "fix": "",
+     "page": "17",
+     "prior": 0.167
+    },
+    {
+     "col": "Mechanical:E",
+     "name": "Loose parts",
+     "fix": "Inspect. Repair.",
+     "page": "17",
+     "prior": 0.167
+    },
+    {
+     "col": "System:B",
+     "name": "Obstruction in suction piping",
+     "fix": "Locate and remove obstruction.",
+     "page": "17",
+     "prior": 0.167
+    },
+    {
+     "col": "System:C",
+     "name": "Pressure rating of pump exceeds pressure requirement of",
+     "fix": "",
+     "page": "17",
+     "prior": 0.167
+    }
+   ]
+  },
+  {
+   "name": "Abnormal noise",
+   "page": "17",
+   "causes": [
+    {
+     "col": "Mechanical:A",
+     "name": "Flow through pump completely or partially obstructed.",
+     "fix": "Locate and remove obstruction. Refer to repair instructions for disassembly.",
+     "page": "17",
+     "prior": 0.143
+    },
+    {
+     "col": "Mechanical:B",
+     "name": "Wrong direction of rotation.",
+     "fix": "",
+     "page": "17",
+     "prior": 0.143
+    },
+    {
+     "col": "Mechanical:C",
+     "name": "Pump lost prime.",
+     "fix": "Reprime. Inspect suction system for air leaks.",
+     "page": "17",
+     "prior": 0.143
+    },
+    {
+     "col": "Mechanical:E",
+     "name": "Loose parts",
+     "fix": "Inspect. Repair.",
+     "page": "17",
+     "prior": 0.143
+    },
+    {
+     "col": "Mechanical:F",
+     "name": "Stuffing box not properly adjusted",
+     "fix": "Adjust gland.",
+     "page": "17",
+     "prior": 0.143
+    },
+    {
+     "col": "System:B",
+     "name": "Obstruction in suction piping",
+     "fix": "Locate and remove obstruction.",
+     "page": "17",
+     "prior": 0.143
+    },
+    {
+     "col": "System:C",
+     "name": "Pressure rating of pump exceeds pressure requirement of",
+     "fix": "",
+     "page": "17",
+     "prior": 0.143
+    }
+   ]
+  },
+  {
+   "name": "Pump stops",
+   "page": "17",
+   "causes": [
+    {
+     "col": "Electrical:A",
+     "name": "No voltage in power system.",
+     "fix": "",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Electrical:B",
+     "name": "No voltage on one phase (Three Phase units).",
+     "fix": "",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Electrical:C",
+     "name": "Low voltage at motor.",
+     "fix": "Running voltage across each leg of motor must be ±10% of nominal voltage shown on nameplate.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Electrical:D",
+     "name": "Motor leads improperly grouped for voltage.",
+     "fix": "Refer to lead grouping diagram on motor nameplate.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Electrical:E",
+     "name": "Control failure.",
+     "fix": "Check control device, starter contactor, H-O-A selector switch, etc., for malfunction.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Electrical:F",
+     "name": "Thermal overload switch open",
+     "fix": "Check phase-to-phase on line side of starter contactor.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Electrical:G",
+     "name": "Installation failure.",
+     "fix": "Check motor or windings to ground with megohmmeter.",
+     "page": "17",
+     "prior": 0.125
+    },
+    {
+     "col": "Electrical:H",
+     "name": "Open windings.",
+     "fix": "Check leg-to-leg with ohmmeter.",
+     "page": "17",
+     "prior": 0.125
+    }
+   ]
+  },
+  {
+   "name": "Overheating",
+   "page": "17",
+   "causes": [
+    {
+     "col": "Electrical:B",
+     "name": "No voltage on one phase (Three Phase units).",
+     "fix": "",
+     "page": "17",
+     "prior": 0.111
+    },
+    {
+     "col": "Electrical:C",
+     "name": "Low voltage at motor.",
+     "fix": "Running voltage across each leg of motor must be ±10% of nominal voltage shown on nameplate.",
+     "page": "17",
+     "prior": 0.111
+    },
+    {
+     "col": "Electrical:D",
+     "name": "Motor leads improperly grouped for voltage.",
+     "fix": "Refer to lead grouping diagram on motor nameplate.",
+     "page": "17",
+     "prior": 0.111
+    },
+    {
+     "col": "Electrical:I",
+     "name": "Frequency variation.",
+     "fix": "Check frequency of power system. Must be less than 5% variation from motor nameplate rating.",
+     "page": "17",
+     "prior": 0.111
+    },
+    {
+     "col": "Mechanical:B",
+     "name": "Wrong direction of rotation.",
+     "fix": "",
+     "page": "17",
+     "prior": 0.111
+    },
+    {
+     "col": "Mechanical:D",
+     "name": "Internal leakage.",
+     "fix": "Check impeller for wear of controlled clearances (See Repair Instructions).",
+     "page": "17",
+     "prior": 0.111
+    },
+    {
+     "col": "Mechanical:E",
+     "name": "Loose parts",
+     "fix": "Inspect. Repair.",
+     "page": "17",
+     "prior": 0.111
+    },
+    {
+     "col": "Mechanical:F",
+     "name": "Stuffing box not properly adjusted",
+     "fix": "Adjust gland.",
+     "page": "17",
+     "prior": 0.111
+    },
+    {
+     "col": "System:C",
+     "name": "Pressure rating of pump exceeds pressure requirement of",
+     "fix": "",
+     "page": "17",
+     "prior": 0.111
+    }
+   ]
+  }
+ ],
+ "checks": []
+}

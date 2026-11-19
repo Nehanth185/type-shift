@@ -1,0 +1,415 @@
+{
+ "summary": {
+  "faults": 10,
+  "nav_correct": 10,
+  "lin_correct": 10,
+  "nav_checks": 37,
+  "lin_checks": 40,
+  "nav_minutes": 104.5,
+  "lin_minutes": 125.0
+ },
+ "rows": [
+  {
+   "fault": "strainer_clogged",
+   "symptom": "low_pressure",
+   "said": "P-12 low pressure",
+   "nav": {
+    "checks": 5,
+    "minutes": 5.0,
+    "found": "strainer_clogged",
+    "correct": true,
+    "path": [
+     "suction_valve",
+     "discharge_valve",
+     "suction_pressure",
+     "sight_glass",
+     "strainer_dp"
+    ]
+   },
+   "linear": {
+    "checks": 4,
+    "minutes": 4.0,
+    "found": "strainer_clogged",
+    "correct": true,
+    "path": [
+     "suction_valve",
+     "suction_pressure",
+     "discharge_valve",
+     "strainer_dp"
+    ]
+   }
+  },
+  {
+   "fault": "suction_valve_closed",
+   "symptom": "low_pressure",
+   "said": "low flow on P-12",
+   "nav": {
+    "checks": 3,
+    "minutes": 2.5,
+    "found": "suction_valve_closed",
+    "correct": true,
+    "path": [
+     "suction_valve",
+     "suction_pressure",
+     "sight_glass"
+    ]
+   },
+   "linear": {
+    "checks": 4,
+    "minutes": 4.0,
+    "found": "suction_valve_closed",
+    "correct": true,
+    "path": [
+     "suction_valve",
+     "suction_pressure",
+     "discharge_valve",
+     "strainer_dp"
+    ]
+   }
+  },
+  {
+   "fault": "worn_impeller",
+   "symptom": "low_pressure",
+   "said": "pressure dropped",
+   "nav": {
+    "checks": 7,
+    "minutes": 31.0,
+    "found": "worn_impeller",
+    "correct": true,
+    "path": [
+     "suction_valve",
+     "discharge_valve",
+     "suction_pressure",
+     "rotation",
+     "sight_glass",
+     "strainer_dp",
+     "impeller"
+    ]
+   },
+   "linear": {
+    "checks": 7,
+    "minutes": 31.0,
+    "found": "worn_impeller",
+    "correct": true,
+    "path": [
+     "suction_valve",
+     "suction_pressure",
+     "discharge_valve",
+     "strainer_dp",
+     "sight_glass",
+     "rotation",
+     "impeller"
+    ]
+   }
+  },
+  {
+   "fault": "wrong_rotation",
+   "symptom": "low_pressure",
+   "said": "not pumping after motor work",
+   "nav": {
+    "checks": 4,
+    "minutes": 3.0,
+    "found": "wrong_rotation",
+    "correct": true,
+    "path": [
+     "suction_valve",
+     "discharge_valve",
+     "suction_pressure",
+     "rotation"
+    ]
+   },
+   "linear": {
+    "checks": 6,
+    "minutes": 6.0,
+    "found": "wrong_rotation",
+    "correct": true,
+    "path": [
+     "suction_valve",
+     "suction_pressure",
+     "discharge_valve",
+     "strainer_dp",
+     "sight_glass",
+     "rotation"
+    ]
+   }
+  },
+  {
+   "fault": "seal_worn",
+   "symptom": "leak",
+   "said": "it's leaking",
+   "nav": {
+    "checks": 4,
+    "minutes": 4.0,
+    "found": "seal_worn",
+    "correct": true,
+    "path": [
+     "drain_plug",
+     "seal_recent",
+     "casing_temp",
+     "seal_drips"
+    ]
+   },
+   "linear": {
+    "checks": 3,
+    "minutes": 3.5,
+    "found": "seal_worn",
+    "correct": true,
+    "path": [
+     "seal_drips",
+     "seal_recent",
+     "casing_temp"
+    ]
+   }
+  },
+  {
+   "fault": "casing_bolts_loose",
+   "symptom": "leak",
+   "said": "leaking at the casing",
+   "nav": {
+    "checks": 5,
+    "minutes": 19.0,
+    "found": "casing_bolts_loose",
+    "correct": true,
+    "path": [
+     "drain_plug",
+     "seal_recent",
+     "casing_temp",
+     "seal_drips",
+     "casing_bolts"
+    ]
+   },
+   "linear": {
+    "checks": 4,
+    "minutes": 18.5,
+    "found": "casing_bolts_loose",
+    "correct": true,
+    "path": [
+     "seal_drips",
+     "seal_recent",
+     "casing_temp",
+     "casing_bolts"
+    ]
+   }
+  },
+  {
+   "fault": "drain_plug_loose",
+   "symptom": "leak",
+   "said": "dripping under the pump",
+   "nav": {
+    "checks": 2,
+    "minutes": 1.0,
+    "found": "drain_plug_loose",
+    "correct": true,
+    "path": [
+     "drain_plug",
+     "seal_recent"
+    ]
+   },
+   "linear": {
+    "checks": 5,
+    "minutes": 19.0,
+    "found": "drain_plug_loose",
+    "correct": true,
+    "path": [
+     "seal_drips",
+     "seal_recent",
+     "casing_temp",
+     "casing_bolts",
+     "drain_plug"
+    ]
+   }
+  },
+  {
+   "fault": "low_voltage",
+   "symptom": "motor_trips",
+   "said": "motor keeps tripping",
+   "nav": {
+    "checks": 2,
+    "minutes": 11.0,
+    "found": "low_voltage",
+    "correct": true,
+    "path": [
+     "motor_current",
+     "supply_voltage"
+    ]
+   },
+   "linear": {
+    "checks": 2,
+    "minutes": 11.0,
+    "found": "low_voltage",
+    "correct": true,
+    "path": [
+     "motor_current",
+     "supply_voltage"
+    ]
+   }
+  },
+  {
+   "fault": "coupling_misaligned",
+   "symptom": "noise",
+   "said": "noisy and vibrating",
+   "nav": {
+    "checks": 4,
+    "minutes": 27.0,
+    "found": "coupling_misaligned",
+    "correct": true,
+    "path": [
+     "suction_pressure",
+     "bearing_temp",
+     "base_bolts",
+     "coupling_gap"
+    ]
+   },
+   "linear": {
+    "checks": 4,
+    "minutes": 27.0,
+    "found": "coupling_misaligned",
+    "correct": true,
+    "path": [
+     "suction_pressure",
+     "bearing_temp",
+     "base_bolts",
+     "coupling_gap"
+    ]
+   }
+  },
+  {
+   "fault": "cavitation",
+   "symptom": "noise",
+   "said": "grinding noise",
+   "nav": {
+    "checks": 1,
+    "minutes": 1.0,
+    "found": "cavitation",
+    "correct": true,
+    "path": [
+     "suction_pressure"
+    ]
+   },
+   "linear": {
+    "checks": 1,
+    "minutes": 1.0,
+    "found": "cavitation",
+    "correct": true,
+    "path": [
+     "suction_pressure"
+    ]
+   }
+  }
+ ],
+ "noisy": [
+  {
+   "fault": "seal_installed_wrong",
+   "wrong_answer_on": "seal_drips",
+   "nav": {
+    "checks": 5,
+    "minutes": 19.0,
+    "found": null,
+    "correct": false,
+    "path": [
+     "drain_plug",
+     "seal_recent",
+     "casing_temp",
+     "seal_drips",
+     "casing_bolts"
+    ]
+   },
+   "linear": {
+    "checks": 5,
+    "minutes": 19.0,
+    "found": null,
+    "correct": false,
+    "path": [
+     "seal_drips",
+     "seal_recent",
+     "casing_temp",
+     "casing_bolts",
+     "drain_plug"
+    ]
+   }
+  },
+  {
+   "fault": "air_leak_suction",
+   "wrong_answer_on": "sight_glass",
+   "nav": {
+    "checks": 7,
+    "minutes": 31.0,
+    "found": null,
+    "correct": false,
+    "path": [
+     "suction_valve",
+     "discharge_valve",
+     "suction_pressure",
+     "sight_glass",
+     "strainer_dp",
+     "rotation",
+     "impeller"
+    ]
+   },
+   "linear": {
+    "checks": 7,
+    "minutes": 31.0,
+    "found": null,
+    "correct": false,
+    "path": [
+     "suction_valve",
+     "suction_pressure",
+     "discharge_valve",
+     "strainer_dp",
+     "sight_glass",
+     "rotation",
+     "impeller"
+    ]
+   }
+  }
+ ],
+ "after_fixes": {
+  "repeat_fault": {
+   "checks": 4,
+   "minutes": 4.5,
+   "found": "strainer_clogged",
+   "correct": true,
+   "path": [
+    "suction_valve",
+    "suction_pressure",
+    "sight_glass",
+    "strainer_dp"
+   ]
+  },
+  "other_fault": {
+   "checks": 3,
+   "minutes": 3.5,
+   "found": "suction_valve_closed",
+   "correct": true,
+   "path": [
+    "suction_valve",
+    "strainer_dp",
+    "suction_pressure"
+   ]
+  },
+  "repeat_before": {
+   "checks": 5,
+   "minutes": 5.0,
+   "found": "strainer_clogged",
+   "correct": true,
+   "path": [
+    "suction_valve",
+    "discharge_valve",
+    "suction_pressure",
+    "sight_glass",
+    "strainer_dp"
+   ]
+  },
+  "other_before": {
+   "checks": 3,
+   "minutes": 2.5,
+   "found": "suction_valve_closed",
+   "correct": true,
+   "path": [
+    "suction_valve",
+    "suction_pressure",
+    "sight_glass"
+   ]
+  }
+ }
+}

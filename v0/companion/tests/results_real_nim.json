@@ -1,0 +1,417 @@
+{
+ "runs": {
+  "worker": {
+   "summary": "42/42 passed",
+   "checks": [
+    {
+     "name": "01 app is served by the real server at /app/ (root redirects), no JS errors",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "02 no token: offline + 401 banner",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "03 token signs in: worker id comes from the token, status shows it",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "04 HUD not tagged MOCK on the real server",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "05 empty workspace shows \"No docs yet\"",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "06 upload real PDF: status shows the server title/pages/chunks",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "07 docs table == GET /docs (ids, titles, pages, chunks, oldest first)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "08 text-less PDF -> 422 shown, nothing added",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "09 unsupported type -> 415 shown; picker no longer offers .docx",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "10 /ask request: workspace, worker, question, mode, no image",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "11 HUD preview == server answer_hud, fits 3 x 7, no width overflow, no clamp warning",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "12 answer cites the PDF: HUD source line p.14, full answer shown",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "13 sources list == server sources",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "14 clicking a source shows page, snippet and doc_id from the server",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "15 latency shown from server",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "16 question + photo: image_b64 sent as raw JPEG base64, server answers with a citation",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "17 photo only (no question): 200, marked not from docs, app shows \"No source\"",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "18 not in docs: HUD says so, no sources",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "19 empty question without photo blocked in the app",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "20 guide starts: step 1 of N from the doc, safety warning first, prev disabled",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "21 Next -> step 2 with its own source line",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "22 Prev -> step 1",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "23 arrow keys walk to the last step; Next becomes Finish",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "24 Finish -> server finished:true, HUD \"All N steps done\", Next disabled",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "25 no guide step overflows the HUD width",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "26 \"Done, log it\" logs the guide (memory command, no sources)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "27 server guide is closed after logging",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "28 see_machine ready card: HUD == server lines, details shown",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "29 first visit to a new label: \"Nothing saved here yet\"",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "30 start_shift card == server lines",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "31 memory list == GET /memory (same ids, newest first)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "32 asks were remembered as text",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "33 another worker (w2) sees none of w1's memory",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "34 delete one item in the app deletes it on the server",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "35 forget everything empties server memory and the count matches",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "36 delete doc in the app deletes it on the server",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "37 after deleting the manual, the pressure question is \"Not in your docs\"",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "38 token for w1 + worker id w2 -> 403 shown, HUD error, no crash",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "39 switching to w2's token switches identity and memory view",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "40 wrong token -> offline + 401 banner",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "41 mobile 390 px: real answer fits, no horizontal overflow",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "42 no unexpected console errors / page errors",
+     "ok": true,
+     "detail": ""
+    }
+   ]
+  },
+  "off": {
+   "summary": "38/38 passed",
+   "checks": [
+    {
+     "name": "01 app is served by the real server at /app/ (root redirects), no JS errors",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "03 connects, not labelled MOCK server (real server, nim LLM)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "04 HUD not tagged MOCK on the real server",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "05 empty workspace shows \"No docs yet\"",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "06 upload real PDF: status shows the server title/pages/chunks",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "07 docs table == GET /docs (ids, titles, pages, chunks, oldest first)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "08 text-less PDF -> 422 shown, nothing added",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "09 unsupported type -> 415 shown; picker no longer offers .docx",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "10 /ask request: workspace, worker, question, mode, no image",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "11 HUD preview == server answer_hud, fits 3 x 7, no width overflow, no clamp warning",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "12 answer cites the PDF: HUD source line p.14, full answer shown",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "13 sources list == server sources",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "14 clicking a source shows page, snippet and doc_id from the server",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "15 latency shown from server",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "16 question + photo: image_b64 sent as raw JPEG base64, server answers with a citation",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "17 photo only (no question): 200, marked not from docs, app shows \"No source\"",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "18 not in docs: HUD says so, no sources",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "19 empty question without photo blocked in the app",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "20 guide starts: step 1 of N from the doc, safety warning first, prev disabled",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "21 Next -> step 2 with its own source line",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "22 Prev -> step 1",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "23 arrow keys walk to the last step; Next becomes Finish",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "24 Finish -> server finished:true, HUD \"All N steps done\", Next disabled",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "25 no guide step overflows the HUD width",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "26 \"Done, log it\" logs the guide (memory command, no sources)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "27 server guide is closed after logging",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "28 see_machine ready card: HUD == server lines, details shown",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "29 first visit to a new label: \"Nothing saved here yet\"",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "30 start_shift card == server lines",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "31 memory list == GET /memory (same ids, newest first)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "32 asks were remembered as text",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "33 no auth: another worker id has its own (empty) memory",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "34 delete one item in the app deletes it on the server",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "35 forget everything empties server memory and the count matches",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "36 delete doc in the app deletes it on the server",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "37 after deleting the manual, the pressure question is \"Not in your docs\"",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "41 mobile 390 px: real answer fits, no horizontal overflow",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "42 no unexpected console errors / page errors",
+     "ok": true,
+     "detail": ""
+    }
+   ]
+  }
+ },
+ "llm": "nim default (nvidia/nemotron-3.5-super-vl-120b-a12b)",
+ "summary": "80/80 passed (final code, 2026-11-12; worker and off run as two invocations)",
+ "ran_at": "2026-11-12 16:48:19 UTC"
+}

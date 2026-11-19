@@ -1,0 +1,192 @@
+{
+ "checks": [
+  {
+   "name": "01 page loads without JS errors",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "02 connection indicator says MOCK server",
+   "ok": true,
+   "detail": "MOCK server \u00b7 127.0.0.1:51089"
+  },
+  {
+   "name": "03 typed ask fills HUD with answer",
+   "ok": true,
+   "detail": "['CP-450 normal: 55-70 PSI', 'Now about 62 PSI, OK', 'Source: pump manual p.14']"
+  },
+  {
+   "name": "04 HUD has <=3 lines, each <=7 words, none cut off by width",
+   "ok": true,
+   "detail": "['CP-450 normal: 55-70 PSI', 'Now about 62 PSI, OK', 'Source: pump manual p.14']"
+  },
+  {
+   "name": "05 HUD tag shows MOCK",
+   "ok": true,
+   "detail": "MOCK \u00b7 ANSWER"
+  },
+  {
+   "name": "06 full answer shown",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "07 latency shown",
+   "ok": true,
+   "detail": "\u00b7 240 ms"
+  },
+  {
+   "name": "08 clicking a source shows its page + snippet",
+   "ok": true,
+   "detail": "CP-450 Pump Manual (MOCK), page 14\n\u201cTable 2. Normal discharge pressure: 55-70 PSI at rated flow. Above 75 PSI, stop and check the discharge valve.\u201d\ndoc_id: doc_cp450"
+  },
+  {
+   "name": "09 photo upload is sent as raw base64 JPEG in image_b64",
+   "ok": true,
+   "detail": "226104"
+  },
+  {
+   "name": "10 server received workspace_id, worker_id, mode",
+   "ok": true,
+   "detail": "{'workspace_id': 'default', 'worker_id': 'w1', 'question': 'Is this pressure normal?', 'mode': 'answer', 'image_b64': 226104}"
+  },
+  {
+   "name": "11 remove photo clears it",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "12 camera snapshot attaches a photo",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "13 over-long server HUD is clamped to 3 lines x 7 words, with warning",
+   "ok": true,
+   "detail": "['This line is deliberately far too long\u2026', 'Second line ok', 'Third line ok']"
+  },
+  {
+   "name": "14 guide starts at step 1, prev disabled",
+   "ok": true,
+   "detail": "[['Step 1/6: Lock out pump first', 'Close both valves', 'Source: pump manual p.21'], 'Step 1 of 6']"
+  },
+  {
+   "name": "15 Next goes to step 2, source line fits (p.22 visible)",
+   "ok": true,
+   "detail": "['Step 2/6: Drain casing', 'Fig 7 drain plug', 'Source: pump manual p.22']"
+  },
+  {
+   "name": "16 Prev goes back to step 1",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "17 ArrowRight walks to last step; Next becomes Finish; Finish -> all done, Next disabled",
+   "ok": true,
+   "detail": "['All 6 steps done', ['All 6 steps done', \"Say 'done, log it'\", 'Source: pump manual p.26']]"
+  },
+  {
+   "name": "18 See machine shows ready card (open loop)",
+   "ok": true,
+   "detail": "['CP-450 \u00b7 seal done 11/4', 'Leak check due today', '\u25b8 start check (2 steps)']"
+  },
+  {
+   "name": "19 ready card details (unfinished, next step) shown",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "20 Open job and Start shift triggers work",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "21 docs list loads seeded docs",
+   "ok": true,
+   "detail": "3"
+  },
+  {
+   "name": "22 upload PDF adds a doc with title/pages/chunks",
+   "ok": true,
+   "detail": "Added \"Test Pump Manual\": 2 pages, 1 chunk"
+  },
+  {
+   "name": "23 delete doc removes it",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "24 upload with no file shows an error, no request",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "25 memory lists seed items + items learned from asks",
+   "ok": true,
+   "detail": "6"
+  },
+  {
+   "name": "26 asks were remembered as text",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "27 delete one memory item",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "28 forget everything empties memory",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "29 server memory really empty after forget-all",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "30 settings persist across reload",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "31 invalid server URL rejected",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "32 unreachable server shows offline + banner",
+   "ok": true,
+   "detail": "Can't reach server at http://127.0.0.1:9"
+  },
+  {
+   "name": "33 ask while offline shows error on HUD, no crash",
+   "ok": true,
+   "detail": "[\"Can't reach answers\", 'Check server in Settings', '']"
+  },
+  {
+   "name": "34 pointing back at the server reconnects",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "35 mobile: no horizontal overflow, HUD readable",
+   "ok": true,
+   "detail": "['XIAO S3: SDA = D4 (GPIO5)', 'SCL = D5 (GPIO6)', 'Source: your WIRING.md']"
+  },
+  {
+   "name": "36 no unexpected console errors / page errors",
+   "ok": true,
+   "detail": "[[], []]"
+  }
+ ],
+ "console_errors": [
+  "Failed to load resource: net::ERR_UNSAFE_PORT",
+  "Failed to load resource: net::ERR_UNSAFE_PORT",
+  "Failed to load resource: net::ERR_UNSAFE_PORT"
+ ],
+ "page_errors": [],
+ "summary": "36/36 passed",
+ "base_url": "http://127.0.0.1:51089"
+}

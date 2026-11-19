@@ -1,0 +1,469 @@
+{
+ "steps": [
+  {
+   "feature": "health/logs",
+   "step": "/health ok, worker auth on, request id echoed",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "auth",
+   "step": "no token -> 401",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "auth",
+   "step": "maria is locked to plant7: workspace demo -> 403",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "auth",
+   "step": "token decides identity (/whoami = maria @ plant7)",
+   "status": "PASS",
+   "ms": 1,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "ready cards",
+   "step": "start_shift card on an empty memory",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "docs upload",
+   "step": "upload cp450_pump_manual_excerpt.pdf",
+   "status": "PASS",
+   "ms": 7,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "docs upload",
+   "step": "upload glasses_v0_bench_notes.md",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "docs upload",
+   "step": "upload scanned (image-only) PDF -> OCR text indexed",
+   "status": "PASS",
+   "ms": 1183,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "concurrency",
+   "step": "/health stays fast while a scanned PDF is OCR'd",
+   "status": "PASS",
+   "ms": 4,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "docs upload",
+   "step": "list docs = 3 in plant7",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "ready cards",
+   "step": "see_machine CP-450 card",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "cited answer",
+   "step": "CP-450 discharge pressure -> 55-70 PSI, cites p.14",
+   "status": "PASS",
+   "ms": 9,
+   "model": "mock",
+   "detail": ""
+  },
+  {
+   "feature": "OCR doc answer",
+   "step": "answer from the scanned card (ISO VG 220), cites it",
+   "status": "PASS",
+   "ms": 5,
+   "model": "mock",
+   "detail": ""
+  },
+  {
+   "feature": "refusal",
+   "step": "forklift lug nut torque -> 'Not in your docs', no sources",
+   "status": "PASS",
+   "ms": 4,
+   "model": "mock",
+   "detail": ""
+  },
+  {
+   "feature": "guide mode",
+   "step": "start seal-swap guide: step 1/N, warning first",
+   "status": "PASS",
+   "ms": 5,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "guide mode",
+   "step": "next x6: steps 1..6 in order, then finished",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "guide mode",
+   "step": "prev -> step N-1",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "guide mode",
+   "step": "G46: 'Done, log it' on step N-1 asks first (no job logged mid-procedure)",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "guide mode",
+   "step": "'Done, log it' at the last step logs the job and closes the guide",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "guide mode",
+   "step": "guide from the scanned card (OCR'd numbered steps)",
+   "status": "PASS",
+   "ms": 4,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "photo + docs",
+   "step": "gauge photo + question -> cited answer (mock never flags readings)",
+   "status": "PASS",
+   "ms": 23,
+   "model": "mock",
+   "detail": ""
+  },
+  {
+   "feature": "photo + docs",
+   "step": "photo only (no question) -> marked 'Not from your docs'",
+   "status": "PASS",
+   "ms": 12,
+   "model": "mock",
+   "detail": ""
+  },
+  {
+   "feature": "memory",
+   "step": "voice note saved",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "ready cards",
+   "step": "CP-450 card recalls the note + today's seal swap",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "memory",
+   "step": "'what do you remember about me' -> count, no doc sources",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "memory",
+   "step": "GET /memory lists only maria's items (asks, guide, job, note, context)",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "memory",
+   "step": "'forget that' deletes the newest item (the note)",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "privacy",
+   "step": "w2 cannot see or delete maria's memory",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "memory",
+   "step": "maria deletes one item",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "ready cards",
+   "step": "open_job card (long label stays <= 40 chars)",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "v0 glasses (fake_device)",
+   "step": "photo + typed question -> hud_text <= 40 chars",
+   "status": "PASS",
+   "ms": 151,
+   "model": "mock",
+   "detail": ""
+  },
+  {
+   "feature": "v0 glasses (fake_device)",
+   "step": "v0 photo answers are grounded in the team docs",
+   "status": "GAP",
+   "ms": null,
+   "model": "",
+   "detail": "GAP: the firmware's /ask path never searches the docs (no sources, no memory, no guide)"
+  },
+  {
+   "feature": "v0 glasses (fake_device)",
+   "step": "photo only, inline PCM audio",
+   "status": "PASS",
+   "ms": 82,
+   "model": "mock",
+   "detail": ""
+  },
+  {
+   "feature": "v0 glasses (fake_device)",
+   "step": "spoken question -> Whisper",
+   "status": "SKIP",
+   "ms": null,
+   "model": "",
+   "detail": "tts=none stt=none"
+  },
+  {
+   "feature": "v0 glasses (fake_device)",
+   "step": "no token in worker mode -> refused (G43 fix: was open)",
+   "status": "PASS",
+   "ms": 78,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "v0 glasses (fake_device)",
+   "step": "/last photo needs a token in worker mode",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "Halo bridge",
+   "step": "on_ask -> real /ask -> paged 14-char rows, cited",
+   "status": "PASS",
+   "ms": 17,
+   "model": "mock",
+   "detail": ""
+  },
+  {
+   "feature": "Halo bridge",
+   "step": "tap next / tap cancel",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "companion app",
+   "step": "companion flows in Chromium",
+   "status": "SKIP",
+   "ms": null,
+   "model": "",
+   "detail": "--skip-browser"
+  },
+  {
+   "feature": "rate limit",
+   "step": "rapid taps -> 429 + Retry-After",
+   "status": "PASS",
+   "ms": 10,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "rate limit",
+   "step": "other endpoints still work while limited (GET /memory 200)",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "Mentra miniapp",
+   "step": "harness_real.ts vs this server: 24/24",
+   "status": "PASS",
+   "ms": 3713,
+   "model": "mock",
+   "detail": ""
+  },
+  {
+   "feature": "health/logs",
+   "step": "request log: JSON line per request, client X-Request-ID kept",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "health/logs",
+   "step": "no worker token ever written to the server log",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "photo confirm",
+   "step": "invented reading (88 PSI) held back: HUD warns, needs_confirm",
+   "status": "PASS",
+   "ms": 41,
+   "model": "stand-in vision",
+   "detail": ""
+  },
+  {
+   "feature": "photo confirm",
+   "step": "answer_full (spoken on Mentra / shown in app) also holds 88 back, keeps the doc range (G43 fix)",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "photo confirm",
+   "step": "another worker can't confirm it (G43 fix)",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "photo confirm",
+   "step": "owner confirms -> reading shown, sources are objects",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "photo confirm",
+   "step": "discard -> 'Reading discarded'",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "photo confirm",
+   "step": "confirm after CONFIRM_TTL -> 404 expired",
+   "status": "PASS",
+   "ms": 3,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "Halo bridge",
+   "step": "confirm flow vs real server: held, then 'confirm' shows 88",
+   "status": "PASS",
+   "ms": null,
+   "model": "",
+   "detail": ""
+  },
+  {
+   "feature": "companion app",
+   "step": "confirm buttons",
+   "status": "SKIP",
+   "ms": null,
+   "model": "",
+   "detail": "--skip-browser"
+  },
+  {
+   "feature": "concurrency",
+   "step": "2 s model call in flight: /health and another worker's request still fast",
+   "status": "PASS",
+   "ms": 2,
+   "model": "",
+   "detail": ""
+  }
+ ],
+ "hud_checked": 29,
+ "hud_violations": [],
+ "meta": {
+  "server_boot_ms": 636,
+  "health": {
+   "status": "ok",
+   "version": "0.1.0",
+   "uptime_s": 0.2,
+   "llm_backend": "mock",
+   "docs_indexed": 3,
+   "ok": true,
+   "provider": "mock",
+   "model": "mock",
+   "tts": "none",
+   "stt": "none",
+   "token_required": false,
+   "auth": "worker",
+   "retriever": "bm25",
+   "db": "/tmp/g43-shift-00bwrxg4/g.db"
+  },
+  "llm": "mock",
+  "model": "mock",
+  "ocr_upload_ms": 1183,
+  "cited_answer": [
+   "The CP-450 pump and every number",
+   "Source: CP-450 Pump Manual p.14"
+  ],
+  "requests_logged": 90,
+  "confirm_spoken_full": "I read a number off the photo that isn't in your docs, so I'm holding it back. Read the gauge yourself, or confirm to see my reading. Your docs say: Normal is 55-70 PSI. Source: CP-450 Pump Manual (fictional excerpt), page 14."
+ },
+ "summary": {
+  "pass": 49,
+  "fail": 0,
+  "skip": 3,
+  "gap": 1,
+  "llm": "mock",
+  "hud_responses_checked": 29,
+  "hud_violations": 0,
+  "wall_s": 26.3,
+  "ts": "2026-11-17 21:11:14"
+ }
+}

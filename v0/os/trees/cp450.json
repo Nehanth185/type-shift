@@ -1,0 +1,622 @@
+{
+ "format": "worker-os/fault-tree@1",
+ "id": "cp450",
+ "title": "CP-450 pump fault tree",
+ "models": [
+  "CP-450"
+ ],
+ "reviewed": true,
+ "reviewed_by": "Hark (hand-written from the fictional CP-450 pages; founder to re-check)",
+ "reviewed_on": "2026-11-13",
+ "drafted_by": "hand",
+ "note": "FICTIONAL machine. Priors are reviewer estimates, not field data. Every check, spec and fix quotes its page.",
+ "docs": {
+  "manual": {
+   "title": "CP-450 Pump Manual (fictional excerpt)",
+   "file": "../../server/sample_workspace/source/cp450_pump_manual.md"
+  },
+  "ts": {
+   "title": "CP-450 Troubleshooting (fictional)",
+   "file": "docs/cp450_troubleshooting.md"
+  }
+ },
+ "gates": {
+  "loto": {
+   "hud": [
+    "⚠ Lock out + tag out motor",
+    "Say 'locked out' when done"
+   ],
+   "doc": "manual",
+   "page": "21",
+   "quote": "Lock out and tag out the pump motor before any service work.",
+   "minutes": 5,
+   "enter": "locked",
+   "confirm": [
+    "locked out",
+    "locked",
+    "lockout done",
+    "tagged out",
+    "loto done",
+    "done",
+    "yes",
+    "ok"
+   ]
+  },
+  "run": {
+   "hud": [
+    "Pump must run 2 min first",
+    "Say 'running' when ready"
+   ],
+   "doc": "manual",
+   "page": "14",
+   "quote": "with the pump running for at least 2 minutes",
+   "minutes": 3,
+   "enter": "running",
+   "confirm": [
+    "running",
+    "it's running",
+    "pump running",
+    "ready",
+    "yes",
+    "ok"
+   ]
+  }
+ },
+ "checks": [
+  {
+   "id": "suction_valve",
+   "hud": "Suction valve fully open?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "30",
+   "quote": "Suction valve handle in line with the pipe",
+   "minutes": 0.5,
+   "needs": "any",
+   "ok_if": "yes"
+  },
+  {
+   "id": "discharge_valve",
+   "hud": "Discharge valve fully open?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "30",
+   "quote": "Discharge valve handle in line with the pipe",
+   "minutes": 0.5,
+   "needs": "any",
+   "ok_if": "yes"
+  },
+  {
+   "id": "suction_pressure",
+   "hud": "Suction gauge reading?",
+   "kind": "reading",
+   "doc": "ts",
+   "page": "30",
+   "quote": "Suction pressure at the suction gauge (RUN): normal 5-15 PSI",
+   "minutes": 1,
+   "needs": "run",
+   "spec": {
+    "lo": 5,
+    "hi": 15,
+    "unit": "PSI"
+   }
+  },
+  {
+   "id": "strainer_dp",
+   "hud": "Strainer differential pressure?",
+   "kind": "reading",
+   "doc": "ts",
+   "page": "30",
+   "quote": "RUN: strainer differential pressure | 0-3 PSI",
+   "minutes": 2,
+   "needs": "run",
+   "spec": {
+    "lo": 0,
+    "hi": 3,
+    "unit": "PSI"
+   }
+  },
+  {
+   "id": "sight_glass",
+   "hud": "Bubbles in suction sight glass?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "30",
+   "quote": "RUN: bubbles in the suction sight glass | No bubbles",
+   "minutes": 1,
+   "needs": "run",
+   "ok_if": "no"
+  },
+  {
+   "id": "rotation",
+   "hud": "Fan turns way of casing arrow?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "30",
+   "quote": "Motor fan turns the way of the arrow on the casing",
+   "minutes": 1,
+   "needs": "run",
+   "ok_if": "yes"
+  },
+  {
+   "id": "impeller",
+   "hud": "Impeller vane tips chipped?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "30",
+   "quote": "LOTO: impeller vane tips | No chipped or rounded tips",
+   "minutes": 20,
+   "needs": "loto",
+   "ok_if": "no"
+  },
+  {
+   "id": "seal_drips",
+   "hud": "Drips per minute at seal?",
+   "kind": "reading",
+   "doc": "ts",
+   "page": "31",
+   "quote": "RUN: drips per minute at the seal | 0-10 drips per minute",
+   "minutes": 2,
+   "needs": "run",
+   "spec": {
+    "lo": 0,
+    "hi": 10,
+    "unit": "drips/min"
+   }
+  },
+  {
+   "id": "seal_recent",
+   "hud": "Seal replaced in last 7 days?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "31",
+   "quote": "Seal replaced in the last 7 days | No",
+   "minutes": 0.5,
+   "needs": "any",
+   "ok_if": "no"
+  },
+  {
+   "id": "casing_temp",
+   "hud": "Casing temperature?",
+   "kind": "reading",
+   "doc": "ts",
+   "page": "31",
+   "quote": "RUN: casing temperature | 20-80 C",
+   "minutes": 1,
+   "needs": "run",
+   "spec": {
+    "lo": 20,
+    "hi": 80,
+    "unit": "C"
+   }
+  },
+  {
+   "id": "casing_bolts",
+   "hud": "Casing bolt torque?",
+   "kind": "reading",
+   "doc": "ts",
+   "page": "31",
+   "quote": "LOTO: casing bolt torque | 25-30 Nm",
+   "minutes": 10,
+   "needs": "loto",
+   "spec": {
+    "lo": 25,
+    "hi": 30,
+    "unit": "Nm"
+   }
+  },
+  {
+   "id": "drain_plug",
+   "hud": "Leak at the drain plug?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "31",
+   "quote": "Leak at the 13 mm drain plug | No leak at the plug",
+   "minutes": 0.5,
+   "needs": "any",
+   "ok_if": "no"
+  },
+  {
+   "id": "motor_current",
+   "hud": "Motor current, clamp meter?",
+   "kind": "reading",
+   "doc": "ts",
+   "page": "31",
+   "quote": "RUN: motor current | 18-22 A",
+   "minutes": 1,
+   "needs": "run",
+   "spec": {
+    "lo": 18,
+    "hi": 22,
+    "unit": "A"
+   }
+  },
+  {
+   "id": "supply_voltage",
+   "hud": "Supply voltage?",
+   "kind": "reading",
+   "doc": "ts",
+   "page": "31",
+   "quote": "Electrician: supply voltage | 440-500 V",
+   "minutes": 10,
+   "needs": "any",
+   "spec": {
+    "lo": 440,
+    "hi": 500,
+    "unit": "V"
+   },
+   "who": "electrician"
+  },
+  {
+   "id": "fan_cover",
+   "hud": "Motor fan cover clean?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "31",
+   "quote": "LOTO: motor fan cover clear of dirt | Clean",
+   "minutes": 2,
+   "needs": "loto",
+   "ok_if": "yes"
+  },
+  {
+   "id": "bearing_temp",
+   "hud": "Bearing housing temperature?",
+   "kind": "reading",
+   "doc": "ts",
+   "page": "31",
+   "quote": "RUN: bearing housing temperature | 20-70 C",
+   "minutes": 1,
+   "needs": "run",
+   "spec": {
+    "lo": 20,
+    "hi": 70,
+    "unit": "C"
+   }
+  },
+  {
+   "id": "base_bolts",
+   "hud": "Base bolts all tight?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "31",
+   "quote": "LOTO: base bolts tight | Tight",
+   "minutes": 5,
+   "needs": "loto",
+   "ok_if": "yes"
+  },
+  {
+   "id": "coupling_gap",
+   "hud": "Coupling gap?",
+   "kind": "reading",
+   "doc": "ts",
+   "page": "31",
+   "quote": "LOTO: coupling gap | 2-4 mm",
+   "minutes": 15,
+   "needs": "loto",
+   "spec": {
+    "lo": 2,
+    "hi": 4,
+    "unit": "mm"
+   }
+  }
+ ],
+ "symptoms": [
+  {
+   "id": "low_pressure",
+   "name": "Low pressure or flow",
+   "doc": "ts",
+   "page": "30",
+   "quote": "Symptom: Low discharge pressure or low flow (below 55 PSI)",
+   "phrases": [
+    "low pressure",
+    "low discharge",
+    "low flow",
+    "no flow",
+    "not pumping",
+    "weak flow",
+    "pressure is low",
+    "pressure low",
+    "pressure drop",
+    "pressure dropped",
+    "losing pressure"
+   ],
+   "causes": [
+    {
+     "id": "suction_valve_closed",
+     "name": "Suction valve partly closed",
+     "prior": 0.15,
+     "expect": {
+      "suction_valve": "bad",
+      "suction_pressure": "low"
+     },
+     "fix": "Open the suction valve fully",
+     "doc": "ts",
+     "page": "30",
+     "quote": "Open the suction valve fully"
+    },
+    {
+     "id": "discharge_valve_closed",
+     "name": "Discharge valve partly closed",
+     "prior": 0.1,
+     "expect": {
+      "discharge_valve": "bad"
+     },
+     "fix": "Open the discharge valve fully",
+     "doc": "ts",
+     "page": "30",
+     "quote": "Open the discharge valve fully"
+    },
+    {
+     "id": "strainer_clogged",
+     "name": "Suction strainer clogged",
+     "prior": 0.3,
+     "expect": {
+      "strainer_dp": "high",
+      "suction_pressure": "low"
+     },
+     "fix": "LOTO, clean the suction strainer",
+     "doc": "ts",
+     "page": "30",
+     "quote": "LOTO: clean the suction strainer"
+    },
+    {
+     "id": "air_leak_suction",
+     "name": "Air leak on suction side",
+     "prior": 0.2,
+     "expect": {
+      "sight_glass": "bad",
+      "suction_pressure": "low"
+     },
+     "fix": "Tighten suction flange, new gasket",
+     "doc": "ts",
+     "page": "30",
+     "quote": "Tighten the suction flange bolts, replace the flange gasket"
+    },
+    {
+     "id": "wrong_rotation",
+     "name": "Wrong rotation after motor work",
+     "prior": 0.1,
+     "expect": {
+      "rotation": "bad"
+     },
+     "fix": "Electrician swaps two motor leads",
+     "doc": "ts",
+     "page": "30",
+     "quote": "Electrician swaps two motor leads"
+    },
+    {
+     "id": "worn_impeller",
+     "name": "Worn impeller",
+     "prior": 0.15,
+     "expect": {
+      "impeller": "bad"
+     },
+     "fix": "Replace the impeller",
+     "doc": "ts",
+     "page": "30",
+     "quote": "Replace the impeller"
+    }
+   ]
+  },
+  {
+   "id": "leak",
+   "name": "Pump leaking",
+   "doc": "ts",
+   "page": "31",
+   "quote": "Symptom: Pump leaking",
+   "phrases": [
+    "leak",
+    "leaking",
+    "leaks",
+    "leaky",
+    "dripping",
+    "drips",
+    "puddle"
+   ],
+   "causes": [
+    {
+     "id": "seal_worn",
+     "name": "Mechanical seal worn",
+     "prior": 0.35,
+     "expect": {
+      "seal_drips": "high"
+     },
+     "fix": "LOTO, replace the seal (p.21-22)",
+     "doc": "ts",
+     "page": "31",
+     "quote": "LOTO: replace the seal (pages 21-22)"
+    },
+    {
+     "id": "seal_installed_wrong",
+     "name": "Seal installed wrong",
+     "prior": 0.15,
+     "expect": {
+      "seal_drips": "high",
+      "seal_recent": "bad"
+     },
+     "fix": "LOTO, reinstall the seal",
+     "doc": "ts",
+     "page": "31",
+     "quote": "LOTO: reinstall the seal, do not touch the seal faces"
+    },
+    {
+     "id": "seal_burned_dry",
+     "name": "Seal burned by dry running",
+     "prior": 0.1,
+     "expect": {
+      "seal_drips": "high",
+      "casing_temp": "high"
+     },
+     "fix": "Refill, prime, then replace seal",
+     "doc": "ts",
+     "page": "31",
+     "quote": "Refill and prime before restart, then replace the seal"
+    },
+    {
+     "id": "casing_bolts_loose",
+     "name": "Casing bolts loose",
+     "prior": 0.2,
+     "expect": {
+      "casing_bolts": "low"
+     },
+     "fix": "Tighten casing bolts, cross pattern",
+     "doc": "ts",
+     "page": "31",
+     "quote": "Tighten the four casing bolts in a cross pattern"
+    },
+    {
+     "id": "drain_plug_loose",
+     "name": "Drain plug loose",
+     "prior": 0.2,
+     "expect": {
+      "drain_plug": "bad"
+     },
+     "fix": "LOTO, tighten plug, new washer",
+     "doc": "ts",
+     "page": "31",
+     "quote": "LOTO: tighten the drain plug, replace its washer"
+    }
+   ]
+  },
+  {
+   "id": "motor_trips",
+   "name": "Motor trips or runs hot",
+   "doc": "ts",
+   "page": "31",
+   "quote": "Symptom: Motor trips or runs hot",
+   "phrases": [
+    "trip",
+    "trips",
+    "tripping",
+    "tripped",
+    "overheat",
+    "overheats",
+    "overheating",
+    "runs hot",
+    "motor hot",
+    "motor is hot",
+    "keeps stopping",
+    "shuts off"
+   ],
+   "causes": [
+    {
+     "id": "motor_overload",
+     "name": "Motor overloaded",
+     "prior": 0.35,
+     "expect": {
+      "motor_current": "high"
+     },
+     "fix": "Throttle discharge valve slightly",
+     "doc": "ts",
+     "page": "31",
+     "quote": "Close the discharge valve slightly, check the system curve"
+    },
+    {
+     "id": "low_voltage",
+     "name": "Low supply voltage",
+     "prior": 0.2,
+     "expect": {
+      "supply_voltage": "low",
+      "motor_current": "high"
+     },
+     "fix": "Electrician fixes the supply",
+     "doc": "ts",
+     "page": "31",
+     "quote": "Electrician fixes the supply"
+    },
+    {
+     "id": "fan_cover_clogged",
+     "name": "Motor fan cover clogged",
+     "prior": 0.2,
+     "expect": {
+      "fan_cover": "bad"
+     },
+     "fix": "Clean the fan cover",
+     "doc": "ts",
+     "page": "31",
+     "quote": "Clean the fan cover"
+    },
+    {
+     "id": "bearing_worn_hot",
+     "name": "Bearing worn",
+     "prior": 0.25,
+     "expect": {
+      "bearing_temp": "high"
+     },
+     "fix": "LOTO, replace the bearings",
+     "doc": "ts",
+     "page": "31",
+     "quote": "LOTO: replace the bearings"
+    }
+   ]
+  },
+  {
+   "id": "noise",
+   "name": "Noise or vibration",
+   "doc": "ts",
+   "page": "31",
+   "quote": "Symptom: Noise or vibration",
+   "phrases": [
+    "noise",
+    "noisy",
+    "vibration",
+    "vibrating",
+    "vibrates",
+    "rattling",
+    "rattle",
+    "grinding",
+    "loud",
+    "shaking"
+   ],
+   "causes": [
+    {
+     "id": "cavitation",
+     "name": "Cavitation (starved suction)",
+     "prior": 0.35,
+     "expect": {
+      "suction_pressure": "low"
+     },
+     "fix": "Clear suction side: valve, strainer",
+     "doc": "ts",
+     "page": "31",
+     "quote": "Clear the suction side (valve, strainer)"
+    },
+    {
+     "id": "bearing_worn_noise",
+     "name": "Bearing worn",
+     "prior": 0.25,
+     "expect": {
+      "bearing_temp": "high"
+     },
+     "fix": "LOTO, replace the bearings",
+     "doc": "ts",
+     "page": "31",
+     "quote": "LOTO: replace the bearings"
+    },
+    {
+     "id": "base_bolts_loose",
+     "name": "Base bolts loose",
+     "prior": 0.2,
+     "expect": {
+      "base_bolts": "bad"
+     },
+     "fix": "Tighten the base bolts",
+     "doc": "ts",
+     "page": "31",
+     "quote": "Tighten the base bolts"
+    },
+    {
+     "id": "coupling_misaligned",
+     "name": "Coupling misaligned",
+     "prior": 0.2,
+     "expect": {
+      "coupling_gap": "out"
+     },
+     "fix": "Realign the coupling",
+     "doc": "ts",
+     "page": "31",
+     "quote": "Realign the coupling"
+    }
+   ]
+  }
+ ]
+}

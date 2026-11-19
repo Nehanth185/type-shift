@@ -1,0 +1,102 @@
+{
+ "summary": "24/24 passed",
+ "server": "real (mock LLM, AUTH_MODE=worker)",
+ "results": [
+  {
+   "name": "setup: server is up in worker-token mode",
+   "ok": true
+  },
+  {
+   "name": "config: with a token, worker id is left to the server (not the Mentra user id)",
+   "ok": true
+  },
+  {
+   "name": "voice ask -> real /ask -> HUD == clamped server answer_hud",
+   "ok": true
+  },
+  {
+   "name": "answer cites the manual page (last HUD line 'Source: … p.14')",
+   "ok": true
+  },
+  {
+   "name": "HUD frame obeys 3 lines x 7 words x 40 chars",
+   "ok": true
+  },
+  {
+   "name": "server stored the ask under the token's worker (w1), in workspace demo",
+   "ok": true
+  },
+  {
+   "name": "another worker (w2) does not see it",
+   "ok": true
+  },
+  {
+   "name": "guide phrase -> real guide, step 1/N copied from the doc, warning first",
+   "ok": true
+  },
+  {
+   "name": "swipe up -> /guide/next -> step 2",
+   "ok": true
+  },
+  {
+   "name": "swipe down -> /guide/prev -> step 1",
+   "ok": true
+  },
+  {
+   "name": "tap + say 'next' -> step 2",
+   "ok": true
+  },
+  {
+   "name": "swiping past the last step -> server finished:true, HUD 'All N steps done'",
+   "ok": true
+  },
+  {
+   "name": "'Done, log it' logs the job (memory command)",
+   "ok": true
+  },
+  {
+   "name": "server guide closed after logging",
+   "ok": true
+  },
+  {
+   "name": "guide ended on the server -> HUD says no guide running",
+   "ok": true
+  },
+  {
+   "name": "ready card (see_machine) == server lines, on the HUD",
+   "ok": true
+  },
+  {
+   "name": "ready card call recorded as w1's context",
+   "ok": true
+  },
+  {
+   "name": "camera glasses: photo reached the real server as image_b64 (server log image=true)",
+   "ok": true
+  },
+  {
+   "name": "no display: answer spoken, nothing rendered",
+   "ok": true
+  },
+  {
+   "name": "wrong token -> HUD 'Sign-in failed' (not 'can't reach')",
+   "ok": true
+  },
+  {
+   "name": "testServer reports the 401",
+   "ok": true
+  },
+  {
+   "name": "w1's token claiming worker w2 -> 403 -> HUD 'Not allowed for this worker'",
+   "ok": true
+  },
+  {
+   "name": "no token (worker id = Mentra user id) -> 401 -> 'Sign-in failed'",
+   "ok": true
+  },
+  {
+   "name": "rate limited (429) -> HUD 'Too many questions'",
+   "ok": true
+  }
+ ]
+}

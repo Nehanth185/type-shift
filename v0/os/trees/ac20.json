@@ -1,0 +1,319 @@
+{
+ "format": "worker-os/fault-tree@1",
+ "id": "ac20",
+ "title": "AC-20 compressor fault tree",
+ "models": [
+  "AC-20"
+ ],
+ "reviewed": true,
+ "reviewed_by": "Hark (hand-written from fictional AC-20 pages; founder to re-check)",
+ "reviewed_on": "2026-11-13",
+ "drafted_by": "hand",
+ "note": "FICTIONAL machine. Priors are estimates. Second tree to test format generality.",
+ "docs": {
+  "ts": {
+   "title": "AC-20 Troubleshooting (fictional)",
+   "file": "docs/ac20_troubleshooting.md"
+  }
+ },
+ "gates": {
+  "loto": {
+   "hud": [
+    "⚠ Lock out, bleed tank to 0",
+    "Say 'locked out' when done"
+   ],
+   "doc": "ts",
+   "page": "8",
+   "quote": "Lock out and tag out the compressor and bleed the tank to 0 PSI before any service work.",
+   "minutes": 5,
+   "enter": "locked",
+   "confirm": [
+    "locked out",
+    "locked",
+    "lockout done",
+    "tagged out",
+    "loto done",
+    "done",
+    "yes",
+    "ok"
+   ]
+  },
+  "run": {
+   "hud": [
+    "Run loaded for 3 min",
+    "Say 'running' when ready"
+   ],
+   "doc": "ts",
+   "page": "8",
+   "quote": "RUN checks need the compressor running and loaded for at least 3 minutes.",
+   "minutes": 4,
+   "enter": "running",
+   "confirm": [
+    "running",
+    "it's running",
+    "pump running",
+    "ready",
+    "yes",
+    "ok"
+   ]
+  }
+ },
+ "checks": [
+  {
+   "id": "filter",
+   "hud": "Intake filter clean?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "9",
+   "quote": "LOTO: intake filter element",
+   "minutes": 2,
+   "needs": "loto",
+   "ok_if": "yes"
+  },
+  {
+   "id": "drain",
+   "hud": "Tank drain valve closed?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "9",
+   "quote": "Tank drain valve handle",
+   "minutes": 0.5,
+   "needs": "any",
+   "ok_if": "yes"
+  },
+  {
+   "id": "hiss",
+   "hud": "Air hissing at unloader?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "9",
+   "quote": "RUN: air hissing from the unloader line when loaded",
+   "minutes": 1,
+   "needs": "run",
+   "ok_if": "no"
+  },
+  {
+   "id": "joints",
+   "hud": "Bubbles on joints?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "9",
+   "quote": "Soapy water on discharge line joints",
+   "minutes": 3,
+   "needs": "run",
+   "ok_if": "no"
+  },
+  {
+   "id": "pumpup",
+   "hud": "Seconds 90 to 125 PSI?",
+   "kind": "reading",
+   "doc": "ts",
+   "page": "9",
+   "quote": "RUN: pump-up time from 90 to 125 PSI",
+   "minutes": 2,
+   "needs": "run",
+   "spec": {
+    "lo": 0,
+    "hi": 60,
+    "unit": "seconds"
+   }
+  },
+  {
+   "id": "fins",
+   "hud": "Cooler fins clear?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "9",
+   "quote": "LOTO: cooler fins",
+   "minutes": 1.5,
+   "needs": "loto",
+   "ok_if": "yes"
+  },
+  {
+   "id": "oil",
+   "hud": "Oil between marks?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "9",
+   "quote": "Oil sight glass",
+   "minutes": 0.5,
+   "needs": "any",
+   "ok_if": "yes"
+  },
+  {
+   "id": "fan",
+   "hud": "Cooling fan turning?",
+   "kind": "yesno",
+   "doc": "ts",
+   "page": "9",
+   "quote": "RUN: cooling fan",
+   "minutes": 0.5,
+   "needs": "run",
+   "ok_if": "yes"
+  },
+  {
+   "id": "room",
+   "hud": "Room air temp?",
+   "kind": "reading",
+   "doc": "ts",
+   "page": "9",
+   "quote": "RUN: room air temperature",
+   "minutes": 0.5,
+   "needs": "run",
+   "spec": {
+    "lo": 40,
+    "hi": 100,
+    "unit": "F"
+   }
+  }
+ ],
+ "symptoms": [
+  {
+   "id": "slow_pressure",
+   "name": "Slow pressure build",
+   "doc": "ts",
+   "page": "9",
+   "quote": "Tank pressure builds too slowly or never reaches 125 PSI",
+   "phrases": [
+    "slow to build",
+    "builds slowly",
+    "won't reach pressure",
+    "never reaches",
+    "tank pressure low",
+    "slow pump up",
+    "not building pressure",
+    "pressure builds slowly"
+   ],
+   "causes": [
+    {
+     "id": "filter_clog",
+     "name": "Intake filter clogged",
+     "prior": 0.3,
+     "expect": {
+      "filter": "bad",
+      "pumpup": "high"
+     },
+     "fix": "Replace filter element",
+     "doc": "ts",
+     "page": "9",
+     "quote": "Replace the intake filter element"
+    },
+    {
+     "id": "drain_open",
+     "name": "Drain valve open",
+     "prior": 0.1,
+     "expect": {
+      "drain": "bad"
+     },
+     "fix": "Close the drain valve",
+     "doc": "ts",
+     "page": "9",
+     "quote": "Close the drain valve"
+    },
+    {
+     "id": "check_valve",
+     "name": "Leaking check valve",
+     "prior": 0.2,
+     "expect": {
+      "hiss": "bad",
+      "pumpup": "high"
+     },
+     "fix": "Replace check valve",
+     "doc": "ts",
+     "page": "9",
+     "quote": "Replace the check valve"
+    },
+    {
+     "id": "line_leak",
+     "name": "Discharge line leak",
+     "prior": 0.2,
+     "expect": {
+      "joints": "bad"
+     },
+     "fix": "Tighten joint or replace line",
+     "doc": "ts",
+     "page": "9",
+     "quote": "Tighten the joint, replace a cracked line"
+    },
+    {
+     "id": "rings",
+     "name": "Worn piston rings",
+     "prior": 0.2,
+     "expect": {
+      "pumpup": "high"
+     },
+     "fix": "Replace piston rings",
+     "doc": "ts",
+     "page": "9",
+     "quote": "Replace the piston rings"
+    }
+   ]
+  },
+  {
+   "id": "hot_trip",
+   "name": "High temperature trip",
+   "doc": "ts",
+   "page": "9",
+   "quote": "Compressor trips on high temperature",
+   "phrases": [
+    "trips on temperature",
+    "overheating",
+    "over temp",
+    "high temperature",
+    "too hot",
+    "thermal trip",
+    "keeps tripping hot"
+   ],
+   "causes": [
+    {
+     "id": "fins_blocked",
+     "name": "Cooler fins blocked",
+     "prior": 0.4,
+     "expect": {
+      "fins": "bad"
+     },
+     "fix": "Blow out cooler fins",
+     "doc": "ts",
+     "page": "9",
+     "quote": "Blow out the cooler fins"
+    },
+    {
+     "id": "low_oil",
+     "name": "Low oil",
+     "prior": 0.25,
+     "expect": {
+      "oil": "bad"
+     },
+     "fix": "Add oil to the mark",
+     "doc": "ts",
+     "page": "9",
+     "quote": "Add oil to the mark"
+    },
+    {
+     "id": "fan_dead",
+     "name": "Fan not turning",
+     "prior": 0.2,
+     "expect": {
+      "fan": "bad"
+     },
+     "fix": "Replace fan motor",
+     "doc": "ts",
+     "page": "9",
+     "quote": "Replace the fan motor"
+    },
+    {
+     "id": "hot_room",
+     "name": "Room too hot",
+     "prior": 0.15,
+     "expect": {
+      "room": "high"
+     },
+     "fix": "Ventilate the room",
+     "doc": "ts",
+     "page": "9",
+     "quote": "Ventilate the room"
+    }
+   ]
+  }
+ ]
+}

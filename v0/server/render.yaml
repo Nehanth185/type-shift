@@ -1,0 +1,29 @@
+# Render Blueprint for the smart-glasses demo server (FREE web service). Step by step: DEPLOY_RENDER.md
+# Free plan facts: 512 MB RAM, sleeps after 15 min idle (~1 min to wake), local disk wiped on every
+# sleep/restart/redeploy -> SQLite starts empty and SEED_DEMO_DOCS=1 reloads the 3 demo manuals at startup.
+services:
+  - type: web
+    name: glasses-demo-server
+    runtime: python
+    plan: free
+    region: oregon
+    # Path of this folder inside the GitHub repo. If the repo IS this server folder, delete this line.
+    rootDir: prototype/v0/server
+    buildCommand: pip install -r requirements-render.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8          # tests run on 3.12; Render's own default is newer
+      - key: SEED_DEMO_DOCS
+        value: "1"
+      - key: RETRIEVER
+        value: bm25
+      - key: TTS_ENGINE
+        value: none
+      - key: STT_ENGINE
+        value: none
+      - key: REQUEST_LOG
+        value: "1"
+      # No NVIDIA_API_KEY here on purpose: without it the server runs in mock mode (canned answers, costs nothing).
+      # For real model answers add NVIDIA_API_KEY in the dashboard (Environment tab). Never put the key in this file.

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work Glasses · Companion v0</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">Work Glasses <span class="ver">companion v0</span></div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="ask" class="on" id="tab-ask">Ask</button>
+    <button role="tab" data-tab="docs" id="tab-docs">Docs</button>
+    <button role="tab" data-tab="memory" id="tab-memory">My memory</button>
+    <button role="tab" data-tab="settings" id="tab-settings">Settings</button>
+  </nav>
+  <div class="conn" id="conn" title="Server status"><span class="dot"></span><span id="connTxt">not checked</span></div>
+</header>
+<div id="banner" class="banner hidden" role="alert"></div>
+
+<main>
+<!-- ================= ASK ================= -->
+<section id="view-ask" class="view on">
+  <div class="cols">
+    <div class="col">
+      <div class="card">
+        <h2>Ready card</h2>
+        <p class="hint">What the glasses would show before you ask.</p>
+        <div class="row">
+          <input id="ctxLabel" placeholder="Machine / job / shift label (e.g. CP-450)" aria-label="Context label">
+        </div>
+        <div class="row btns">
+          <button data-trigger="see_machine" class="trig">See machine</button>
+          <button data-trigger="open_job" class="trig">Open job</button>
+          <button data-trigger="start_shift" class="trig">Start shift</button>
+        </div>
+        <div id="ctxInfo" class="ctxinfo hidden"></div>
+      </div>
+
+      <div class="card">
+        <h2>Ask</h2>
+        <form id="askForm" autocomplete="off">
+          <textarea id="question" rows="2" placeholder="e.g. Is this pressure normal?" aria-label="Question"></textarea>
+          <div class="row modes" role="radiogroup" aria-label="Mode">
+            <label><input type="radio" name="mode" value="answer" checked> Answer</label>
+            <label><input type="radio" name="mode" value="guide"> Guide me step by step</label>
+          </div>
+          <div class="row photo">
+            <label class="btn ghost" for="photoIn">Add photo</label>
+            <input type="file" id="photoIn" accept="image/*" capture="environment" hidden>
+            <button type="button" class="ghost" id="camBtn">Use camera</button>
+            <button type="button" class="ghost hidden" id="snapBtn">Take photo</button>
+            <button type="button" class="ghost hidden" id="clearPhoto">Remove photo</button>
+          </div>
+          <video id="camVideo" class="hidden" playsinline muted></video>
+          <img id="photoPreview" class="preview hidden" alt="Photo to send">
+          <div class="row"><button type="submit" id="askBtn" class="primary">Ask</button><span id="askStatus" class="status"></span></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card hudcard">
+        <h2>Glasses view <span class="hint">(one-eye HUD preview · 3 lines · ≤7 words, ≤40 characters)</span></h2>
+        <div class="eye">
+          <div class="hud" id="hud" aria-live="polite">
+            <div class="hudtag"><span id="hudTag">READY</span><span id="hudStep"></span></div>
+            <div class="hudline" id="hud1">Ready. Ask anything.</div>
+            <div class="hudline" id="hud2"></div>
+            <div class="hudline" id="hud3"></div>
+          </div>
+        </div>
+        <div class="row btns hidden" id="confirmBtns"><span id="confirmMsg">Confirm this reading?</span><button id="confirmYes">Confirm ✓</button><button id="confirmNo">Discard ✗</button></div>
+        <div class="row btns guidebtns hidden" id="guideBtns">
+          <button id="prevBtn" class="ghost">◂ Prev</button>
+          <span id="guideCount" class="status"></span>
+          <button id="nextBtn" class="ghost">Next ▸</button>
+        </div>
+        <p id="hudWarn" class="warn hidden"></p>
+      </div>
+
+      <div class="card" id="fullCard">
+        <h2>Full answer <span id="latency" class="hint"></span></h2>
+        <div id="answerFull" class="full muted">No answer yet.</div>
+        <h3>Sources</h3>
+        <ul id="sources" class="sources"><li class="muted">None yet.</li></ul>
+        <div id="sourceDetail" class="srcdetail hidden" role="region" aria-label="Source detail"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOCS ================= -->
+<section id="view-docs" class="view">
+  <div class="card">
+    <h2>Team docs</h2>
+    <p class="hint">Manuals, SOPs, notes. Everyone in this workspace can search them.</p>
+    <form id="uploadForm" class="row">
+      <input type="file" id="docFile" accept=".pdf,.txt,.md,.markdown,application/pdf,text/plain,text/markdown" aria-label="Document file">
+      <button type="submit" class="primary" id="uploadBtn">Upload</button>
+      <span id="uploadStatus" class="status"></span>
+    </form>
+    <table class="docs">
+      <thead><tr><th>Title</th><th>Pages</th><th>Chunks</th><th></th></tr></thead>
+      <tbody id="docRows"><tr><td colspan="4" class="muted">Loading…</td></tr></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= MEMORY ================= -->
+<section id="view-memory" class="view">
+  <div class="card">
+    <h2>My memory</h2>
+    <p class="hint">What the glasses remember about <b>you</b>: text facts only, never audio or video. Your employer can't read this. Delete anything.</p>
+    <div class="row btns">
+      <button id="memRefresh" class="ghost">Refresh</button>
+      <button id="forgetAll" class="danger">Forget everything</button>
+      <span id="memStatus" class="status"></span>
+    </div>
+    <ul id="memList" class="memlist"><li class="muted">Loading…</li></ul>
+  </div>
+</section>
+
+<!-- ================= SETTINGS ================= -->
+<section id="view-settings" class="view">
+  <div class="card">
+    <h2>Settings</h2>
+    <form id="settingsForm" class="settings">
+      <label>Server URL <input id="serverUrl" placeholder="http://localhost:8000" aria-label="Server URL"></label>
+      <label>Workspace ID <input id="workspaceId" aria-label="Workspace ID"></label>
+      <label>Worker ID <input id="workerId" aria-label="Worker ID"></label>
+      <label>Worker token <input id="workerToken" type="password" autocomplete="off" placeholder="only if the server uses AUTH_MODE=worker" aria-label="Worker token"></label>
+      <div class="row btns"><button type="submit" class="primary" id="saveSettings">Save</button>
+        <button type="button" class="ghost" id="testConn">Test connection</button><span id="settingsStatus" class="status"></span></div>
+    </form>
+    <p class="hint">Default server = the page's own origin. Leave it blank to use that. Settings are stored in this browser only.
+      With a worker token, the server decides your worker ID (it is filled in for you).</p>
+  </div>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

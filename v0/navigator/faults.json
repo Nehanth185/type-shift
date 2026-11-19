@@ -1,0 +1,14 @@
+{"asset":"CP-450","doc":"cp450_pump_manual.md","reviewed_by_human":false,
+"symptoms":{"low_pressure":{"match":["low pressure","low discharge","below 50","weak flow","low flow"],
+ "causes":{"clogged_strainer":{"prior":0.4,"fix":"Clean suction strainer"},
+  "suction_air_leak":{"prior":0.3,"fix":"Seal suction-side air leak"},
+  "running_dry":{"prior":0.2,"fix":"Restore fluid supply; check casing temp"},
+  "worn_seal":{"prior":0.1,"fix":"Replace mechanical seal (SK-450)"}},
+ "checks":[
+  {"id":"read_gauge","text":"Gauge reads below 50 PSI?","page":14,"min":1,"kind":"value","cites":"Read pressure after 2 min running; below 50 PSI = problem","yes":{},"no":{"done":"Pressure normal (55-70)"}},
+  {"id":"casing_hot","text":"Casing hotter than 80 C?","page":14,"min":1,"kind":"yn","yes":{"running_dry":3.0},"no":{"running_dry":0.3}},
+  {"id":"strainer","text":"Suction strainer clogged?","page":14,"min":3,"kind":"yn","yes":{"clogged_strainer":5.0},"no":{"clogged_strainer":0.1}},
+  {"id":"air_leak","text":"Air leaks on suction side?","page":14,"min":4,"kind":"yn","yes":{"suction_air_leak":5.0},"no":{"suction_air_leak":0.1}}]},
+ "high_pressure":{"match":["high pressure","above 75","over 75"],
+ "causes":{"discharge_valve_closed":{"prior":0.9,"fix":"Open discharge valve fully"},"other":{"prior":0.1,"fix":"Unknown"}},
+ "checks":[{"id":"stop","text":"Stop pump. Valve fully open?","page":14,"min":1,"kind":"yn","yes":{"discharge_valve_closed":0.1},"no":{"discharge_valve_closed":6.0}}]}}}

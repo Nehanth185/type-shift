@@ -1,0 +1,3 @@
+arduino-cli 1.6.0, esp32:esp32 3.3.12, FQBN esp32:esp32:XIAO_ESP32S3:PSRAM=opi, compiled 2026-11-10 in the Hark sandbox (aarch64 Linux). Libraries: Adafruit SSD1306 2.5.17, Adafruit GFX 1.13.0, ArduinoJson 7.4.3, OV5640 Auto Focus for ESP32 Camera 0.1.1. Only warning: the intentional 'secrets.h not found' notice.
+Sketch uses 1148406 bytes (34%) of program storage space. Maximum is 3342336 bytes.
+Global variables use 64000 bytes (19%) of dynamic memory, leaving 263680 bytes for local variables. Maximum is 327680 bytes.

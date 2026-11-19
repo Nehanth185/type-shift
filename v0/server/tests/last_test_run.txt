@@ -1,0 +1,14 @@
+PASS  server starts (mock)
+{"ok":true,"provider":"mock","model":"mock","tts":"piper:en_US-lessac-low.onnx","stt":"faster-whisper:tiny.en","token_required":false,"auth":"off","retriever":"bm25","db":"/workspace/projects/a0c4dcde-fcc6-44f9-8f32-f9dca2be9f31/prototype/v0/server/data/glasses.db"}
+PASS  photo -> hud_text + audio_url WAV
+PASS  audio is 16 kHz mono 16-bit (firmware format)
+PASS  typed question passed through
+PASS  inline pcm_b64 audio mode
+PASS  dark photo -> "Can't read that"
+PASS  spoken question transcribed: heard: What is the pressure on this gauge?,
+PASS  raw image/jpeg body
+PASS  non-JPEG rejected with 400
+PASS  /last returns last photo
+PASS  openai provider: NIM-shaped request (no system role, image <180 KB b64), reply parsed
+
+11 passed, 0 failed

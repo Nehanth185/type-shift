@@ -1,0 +1,782 @@
+{
+ "pump id_00 6_dB": {
+  "n": [
+   150,
+   100,
+   100
+  ],
+  "v1": {
+   "10s": {
+    "auc": 0.992,
+    "ci95": [
+     0.982,
+     0.998
+    ],
+    "ms_embed": 6.45,
+    "ms_score": 0.02,
+    "ms_fit_calibrate": 32.3
+   },
+   "3s": {
+    "auc": 0.983,
+    "ci95": [
+     0.968,
+     0.994
+    ],
+    "ms_embed": 0.88,
+    "ms_score": 0.02,
+    "ms_fit_calibrate": 7.9
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.999,
+    "median_passes": 3.0,
+    "odd_h": 0.01,
+    "odd_f": 0.84
+   }
+  },
+  "v2": {
+   "10s": {
+    "auc": 0.991,
+    "ci95": [
+     0.98,
+     0.997
+    ],
+    "ms_embed": 7.5,
+    "ms_score": 0.049,
+    "ms_fit_calibrate": 57.9
+   },
+   "3s": {
+    "auc": 0.969,
+    "ci95": [
+     0.947,
+     0.986
+    ],
+    "ms_embed": 1.42,
+    "ms_score": 0.051,
+    "ms_fit_calibrate": 55.6
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.998,
+    "median_passes": 4.0,
+    "odd_h": 0.01,
+    "odd_f": 0.8
+   }
+  }
+ },
+ "pump id_00 -6_dB": {
+  "n": [
+   150,
+   100,
+   100
+  ],
+  "v1": {
+   "10s": {
+    "auc": 0.773,
+    "ci95": [
+     0.703,
+     0.834
+    ],
+    "ms_embed": 6.09,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 8.0
+   },
+   "3s": {
+    "auc": 0.778,
+    "ci95": [
+     0.715,
+     0.839
+    ],
+    "ms_embed": 0.69,
+    "ms_score": 0.02,
+    "ms_fit_calibrate": 7.3
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.262,
+    "median_passes": 7.0,
+    "odd_h": 0.02,
+    "odd_f": 0.26
+   }
+  },
+  "v2": {
+   "10s": {
+    "auc": 0.727,
+    "ci95": [
+     0.656,
+     0.791
+    ],
+    "ms_embed": 7.18,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 55.8
+   },
+   "3s": {
+    "auc": 0.698,
+    "ci95": [
+     0.624,
+     0.769
+    ],
+    "ms_embed": 1.22,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 54.1
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.018,
+    "median_passes": 7.0,
+    "odd_h": 0.02,
+    "odd_f": 0.1
+   }
+  }
+ },
+ "pump id_02 6_dB": {
+  "n": [
+   70,
+   40,
+   60
+  ],
+  "v1": {
+   "10s": {
+    "auc": 0.94,
+    "ci95": [
+     0.893,
+     0.976
+    ],
+    "ms_embed": 2.5,
+    "ms_score": 0.02,
+    "ms_fit_calibrate": 5.9
+   },
+   "3s": {
+    "auc": 0.913,
+    "ci95": [
+     0.857,
+     0.958
+    ],
+    "ms_embed": 0.74,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 5.4
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.546,
+    "median_passes": 6.0,
+    "odd_h": 0.0,
+    "odd_f": 0.383
+   }
+  },
+  "v2": {
+   "10s": {
+    "auc": 0.958,
+    "ci95": [
+     0.923,
+     0.985
+    ],
+    "ms_embed": 3.31,
+    "ms_score": 0.049,
+    "ms_fit_calibrate": 27.9
+   },
+   "3s": {
+    "auc": 0.949,
+    "ci95": [
+     0.905,
+     0.981
+    ],
+    "ms_embed": 1.21,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 27.8
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.969,
+    "median_passes": 4.0,
+    "odd_h": 0.0,
+    "odd_f": 0.65
+   }
+  }
+ },
+ "fan id_00 6_dB": {
+  "n": [
+   80,
+   60,
+   60
+  ],
+  "v1": {
+   "10s": {
+    "auc": 0.824,
+    "ci95": [
+     0.742,
+     0.893
+    ],
+    "ms_embed": 5.77,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 12.3
+   },
+   "3s": {
+    "auc": 0.791,
+    "ci95": [
+     0.712,
+     0.866
+    ],
+    "ms_embed": 0.74,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 5.8
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.003,
+    "median_passes": 10.0,
+    "odd_h": 0.033,
+    "odd_f": 0.067
+   }
+  },
+  "v2": {
+   "10s": {
+    "auc": 0.872,
+    "ci95": [
+     0.803,
+     0.929
+    ],
+    "ms_embed": 6.59,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 36.3
+   },
+   "3s": {
+    "auc": 0.812,
+    "ci95": [
+     0.734,
+     0.879
+    ],
+    "ms_embed": 1.27,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 31.3
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.691,
+    "median_passes": 6.0,
+    "odd_h": 0.033,
+    "odd_f": 0.45
+   }
+  }
+ },
+ "fan id_00 0_dB": {
+  "n": [
+   80,
+   60,
+   60
+  ],
+  "v1": {
+   "10s": {
+    "auc": 0.603,
+    "ci95": [
+     0.505,
+     0.701
+    ],
+    "ms_embed": 5.9,
+    "ms_score": 0.02,
+    "ms_fit_calibrate": 5.4
+   },
+   "3s": {
+    "auc": 0.578,
+    "ci95": [
+     0.477,
+     0.674
+    ],
+    "ms_embed": 0.7,
+    "ms_score": 0.02,
+    "ms_fit_calibrate": 5.4
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.015,
+    "median_passes": 7.0,
+    "odd_h": 0.0,
+    "odd_f": 0.083
+   }
+  },
+  "v2": {
+   "10s": {
+    "auc": 0.663,
+    "ci95": [
+     0.565,
+     0.75
+    ],
+    "ms_embed": 7.09,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 31.9
+   },
+   "3s": {
+    "auc": 0.638,
+    "ci95": [
+     0.539,
+     0.73
+    ],
+    "ms_embed": 1.21,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 31.1
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.005,
+    "alert_faulty": 0.33,
+    "median_passes": 7.0,
+    "odd_h": 0.067,
+    "odd_f": 0.3
+   }
+  }
+ },
+ "fan id_00 -6_dB": {
+  "n": [
+   80,
+   60,
+   60
+  ],
+  "v1": {
+   "10s": {
+    "auc": 0.625,
+    "ci95": [
+     0.518,
+     0.719
+    ],
+    "ms_embed": 5.39,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 5.6
+   },
+   "3s": {
+    "auc": 0.621,
+    "ci95": [
+     0.52,
+     0.715
+    ],
+    "ms_embed": 0.69,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 5.3
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.008,
+    "alert_faulty": 0.057,
+    "median_passes": 6.0,
+    "odd_h": 0.067,
+    "odd_f": 0.133
+   }
+  },
+  "v2": {
+   "10s": {
+    "auc": 0.624,
+    "ci95": [
+     0.522,
+     0.72
+    ],
+    "ms_embed": 6.56,
+    "ms_score": 0.052,
+    "ms_fit_calibrate": 32.1
+   },
+   "3s": {
+    "auc": 0.609,
+    "ci95": [
+     0.504,
+     0.707
+    ],
+    "ms_embed": 1.23,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 44.5
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.005,
+    "alert_faulty": 0.093,
+    "median_passes": 7.0,
+    "odd_h": 0.05,
+    "odd_f": 0.167
+   }
+  }
+ },
+ "fan id_02 6_dB": {
+  "n": [
+   80,
+   60,
+   60
+  ],
+  "v1": {
+   "10s": {
+    "auc": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "ms_embed": 6.06,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 6.1
+   },
+   "3s": {
+    "auc": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "ms_embed": 0.71,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 5.5
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.986,
+    "median_passes": 4.0,
+    "odd_h": 0.0,
+    "odd_f": 0.717
+   }
+  },
+  "v2": {
+   "10s": {
+    "auc": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "ms_embed": 6.9,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 32.3
+   },
+   "3s": {
+    "auc": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "ms_embed": 1.4,
+    "ms_score": 0.049,
+    "ms_fit_calibrate": 32.1
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.997,
+    "median_passes": 3.0,
+    "odd_h": 0.0,
+    "odd_f": 0.817
+   }
+  }
+ },
+ "fan id_02 0_dB": {
+  "n": [
+   80,
+   60,
+   60
+  ],
+  "v1": {
+   "10s": {
+    "auc": 0.923,
+    "ci95": [
+     0.867,
+     0.967
+    ],
+    "ms_embed": 6.0,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 5.3
+   },
+   "3s": {
+    "auc": 0.922,
+    "ci95": [
+     0.865,
+     0.966
+    ],
+    "ms_embed": 0.68,
+    "ms_score": 0.02,
+    "ms_fit_calibrate": 5.3
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.188,
+    "median_passes": 7.0,
+    "odd_h": 0.017,
+    "odd_f": 0.233
+   }
+  },
+  "v2": {
+   "10s": {
+    "auc": 0.973,
+    "ci95": [
+     0.945,
+     0.995
+    ],
+    "ms_embed": 6.4,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 32.3
+   },
+   "3s": {
+    "auc": 0.894,
+    "ci95": [
+     0.839,
+     0.946
+    ],
+    "ms_embed": 1.22,
+    "ms_score": 0.047,
+    "ms_fit_calibrate": 30.3
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.002,
+    "alert_faulty": 0.414,
+    "median_passes": 7.0,
+    "odd_h": 0.033,
+    "odd_f": 0.333
+   }
+  }
+ },
+ "fan id_02 -6_dB": {
+  "n": [
+   80,
+   60,
+   60
+  ],
+  "v1": {
+   "10s": {
+    "auc": 0.643,
+    "ci95": [
+     0.539,
+     0.74
+    ],
+    "ms_embed": 6.86,
+    "ms_score": 0.07,
+    "ms_fit_calibrate": 30.6
+   },
+   "3s": {
+    "auc": 0.65,
+    "ci95": [
+     0.55,
+     0.747
+    ],
+    "ms_embed": 1.1,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 6.4
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.007,
+    "alert_faulty": 0.012,
+    "median_passes": 6.5,
+    "odd_h": 0.067,
+    "odd_f": 0.083
+   }
+  },
+  "v2": {
+   "10s": {
+    "auc": 0.727,
+    "ci95": [
+     0.636,
+     0.818
+    ],
+    "ms_embed": 7.5,
+    "ms_score": 0.058,
+    "ms_fit_calibrate": 33.6
+   },
+   "3s": {
+    "auc": 0.667,
+    "ci95": [
+     0.57,
+     0.762
+    ],
+    "ms_embed": 1.66,
+    "ms_score": 0.054,
+    "ms_fit_calibrate": 46.1
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.017,
+    "alert_faulty": 0.241,
+    "median_passes": 7.0,
+    "odd_h": 0.083,
+    "odd_f": 0.25
+   }
+  }
+ },
+ "pump id_00 0_dB": {
+  "n": [
+   150,
+   100,
+   100
+  ],
+  "v1": {
+   "10s": {
+    "auc": 0.893,
+    "ci95": [
+     0.847,
+     0.933
+    ],
+    "ms_embed": 5.88,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 30.0
+   },
+   "3s": {
+    "auc": 0.875,
+    "ci95": [
+     0.824,
+     0.918
+    ],
+    "ms_embed": 0.76,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 7.6
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.002,
+    "alert_faulty": 0.919,
+    "median_passes": 5.0,
+    "odd_h": 0.05,
+    "odd_f": 0.59
+   }
+  },
+  "v2": {
+   "10s": {
+    "auc": 0.907,
+    "ci95": [
+     0.865,
+     0.942
+    ],
+    "ms_embed": 6.55,
+    "ms_score": 0.047,
+    "ms_fit_calibrate": 55.5
+   },
+   "3s": {
+    "auc": 0.864,
+    "ci95": [
+     0.811,
+     0.91
+    ],
+    "ms_embed": 1.24,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 54.4
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.003,
+    "alert_faulty": 0.87,
+    "median_passes": 5.0,
+    "odd_h": 0.05,
+    "odd_f": 0.54
+   }
+  }
+ },
+ "pump id_02 -6_dB": {
+  "n": [
+   70,
+   40,
+   60
+  ],
+  "v1": {
+   "10s": {
+    "auc": 0.73,
+    "ci95": [
+     0.624,
+     0.824
+    ],
+    "ms_embed": 2.44,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 5.9
+   },
+   "3s": {
+    "auc": 0.684,
+    "ci95": [
+     0.576,
+     0.783
+    ],
+    "ms_embed": 0.73,
+    "ms_score": 0.019,
+    "ms_fit_calibrate": 5.1
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.067,
+    "median_passes": 7.0,
+    "odd_h": 0.0,
+    "odd_f": 0.15
+   }
+  },
+  "v2": {
+   "10s": {
+    "auc": 0.717,
+    "ci95": [
+     0.615,
+     0.809
+    ],
+    "ms_embed": 3.4,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 28.1
+   },
+   "3s": {
+    "auc": 0.677,
+    "ci95": [
+     0.57,
+     0.775
+    ],
+    "ms_embed": 1.26,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 28.1
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.014,
+    "median_passes": 6.5,
+    "odd_h": 0.0,
+    "odd_f": 0.083
+   }
+  }
+ },
+ "pump id_02 0_dB": {
+  "n": [
+   70,
+   40,
+   60
+  ],
+  "v1": {
+   "10s": {
+    "auc": 0.874,
+    "ci95": [
+     0.787,
+     0.94
+    ],
+    "ms_embed": 5.6,
+    "ms_score": 0.02,
+    "ms_fit_calibrate": 24.4
+   },
+   "3s": {
+    "auc": 0.811,
+    "ci95": [
+     0.716,
+     0.892
+    ],
+    "ms_embed": 0.77,
+    "ms_score": 0.02,
+    "ms_fit_calibrate": 5.3
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.462,
+    "median_passes": 7.0,
+    "odd_h": 0.025,
+    "odd_f": 0.35
+   }
+  },
+  "v2": {
+   "10s": {
+    "auc": 0.867,
+    "ci95": [
+     0.779,
+     0.934
+    ],
+    "ms_embed": 6.46,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 29.6
+   },
+   "3s": {
+    "auc": 0.856,
+    "ci95": [
+     0.778,
+     0.921
+    ],
+    "ms_embed": 1.28,
+    "ms_score": 0.048,
+    "ms_fit_calibrate": 27.9
+   },
+   "walk_3s": {
+    "false_alert_healthy": 0.0,
+    "alert_faulty": 0.499,
+    "median_passes": 7.0,
+    "odd_h": 0.025,
+    "odd_f": 0.367
+   }
+  }
+ }
+}

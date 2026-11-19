@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/@mentra/miniapp-cli/schema/miniapp.schema.json",
+  "packageName": "com.workglasses.answers",
+  "version": "0.1.0",
+  "name": "Work Glasses Answers",
+  "description": "Ask about your job out loud; see a 3-line answer from your team's docs, with the source.",
+  "icon": "icon.png",
+  "type": "standard",
+  "sdkVersion": "0.3.0",
+  "minHostVersion": "1.42.0",
+  "entry": {
+    "background": "background/index.js",
+    "ui": "ui/index.html"
+  },
+  "permissions": [
+    {"type": "MICROPHONE", "description": "Hear your question only after you tap or press the button."},
+    {"type": "CAMERA", "description": "On camera glasses, take one photo of what you're looking at when you ask. This app does not keep it."}
+  ],
+  "hardwareRequirements": [
+    {"type": "DISPLAY", "level": "OPTIONAL", "description": "Shows the 3-line answer. Without a display, the answer is spoken."},
+    {"type": "MICROPHONE", "level": "REQUIRED", "description": "Your spoken question (phone mic is used if the glasses have none)."},
+    {"type": "CAMERA", "level": "OPTIONAL", "description": "Photo context on Mentra Live."},
+    {"type": "BUTTON", "level": "OPTIONAL", "description": "Press to ask, long-press to clear."}
+  ]
+}

@@ -1,0 +1,330 @@
+[
+ {
+  "id": 1,
+  "q": "What is the normal discharge pressure on the CP-450?",
+  "doc": "cp450",
+  "page": "14",
+  "any": [
+   "55-70",
+   "55 to 70",
+   "55\u201370"
+  ]
+ },
+ {
+  "id": 2,
+  "q": "The pump reads 45 PSI. What should I check?",
+  "doc": "cp450",
+  "page": "14",
+  "any": [
+   "strainer"
+  ]
+ },
+ {
+  "id": 3,
+  "q": "What do I do if discharge pressure is above 75 PSI?",
+  "doc": "cp450",
+  "page": "14",
+  "any": [
+   "stop the pump",
+   "stop pump",
+   "discharge valve"
+  ]
+ },
+ {
+  "id": 4,
+  "q": "What is the maximum casing temperature?",
+  "doc": "cp450",
+  "page": "14",
+  "any": [
+   "80"
+  ]
+ },
+ {
+  "id": 5,
+  "q": "Which seal kit do I need for the CP-450?",
+  "doc": "cp450",
+  "page": [
+   "21",
+   "22"
+  ],
+  "any": [
+   "SK-450",
+   "SK 450"
+  ],
+  "why": "SK-450 is named on p.21 (tools) and p.22 (step 5)"
+ },
+ {
+  "id": 6,
+  "q": "What tools do I need for the seal swap?",
+  "doc": "cp450",
+  "page": "21",
+  "any": [
+   "13 mm",
+   "13mm"
+  ]
+ },
+ {
+  "id": 7,
+  "q": "Where is the drain plug on the pump casing?",
+  "doc": "cp450",
+  "page": "22",
+  "any": [
+   "lowest point",
+   "bottom"
+  ]
+ },
+ {
+  "id": 8,
+  "q": "After reassembling the pump, how long do I run it to check for leaks?",
+  "doc": "cp450",
+  "page": "22",
+  "any": [
+   "10 minutes",
+   "ten minutes",
+   "10 min"
+  ]
+ },
+ {
+  "id": 9,
+  "q": "When should I re-check for leaks after a seal replacement?",
+  "doc": "cp450",
+  "page": "22",
+  "any": [
+   "7 days",
+   "seven days"
+  ]
+ },
+ {
+  "id": 10,
+  "q": "How long should the pump run before I read the discharge pressure?",
+  "doc": "cp450",
+  "page": "14",
+  "any": [
+   "2 minutes",
+   "two minutes",
+   "2 min"
+  ]
+ },
+ {
+  "id": 11,
+  "q": "What does the air-in-line alarm mean?",
+  "doc": "iv",
+  "page": "1",
+  "any": [
+   "air bubble",
+   "bubble"
+  ]
+ },
+ {
+  "id": 12,
+  "q": "What's the first thing to do for an occlusion alarm?",
+  "doc": "iv",
+  "page": "2",
+  "any": [
+   "pause"
+  ]
+ },
+ {
+  "id": 13,
+  "q": "Who do I call if the air-in-line alarm keeps repeating?",
+  "doc": "iv",
+  "page": "1",
+  "any": [
+   "charge nurse"
+  ]
+ },
+ {
+  "id": 14,
+  "q": "What usually causes an occlusion alarm?",
+  "doc": "iv",
+  "page": "2",
+  "any": [
+   "clamp",
+   "kink"
+  ]
+ },
+ {
+  "id": 15,
+  "q": "Which pin is SDA on the XIAO ESP32-S3?",
+  "doc": "bench",
+  "page": "1",
+  "any": [
+   "D4",
+   "GPIO5"
+  ]
+ },
+ {
+  "id": 16,
+  "q": "What I2C address does the OLED use?",
+  "doc": "bench",
+  "page": [
+   "1",
+   "2"
+  ],
+  "any": [
+   "0x3D"
+  ],
+  "why": "0x3D is on p.1 and in p.2 checklist step 3"
+ },
+ {
+  "id": 17,
+  "q": "The OLED text is mirrored. How do I fix it?",
+  "doc": "bench",
+  "page": "2",
+  "any": [
+   "double-tap",
+   "double tap"
+  ]
+ },
+ {
+  "id": 18,
+  "q": "Which GPIO pins should I not wire anything to?",
+  "doc": "bench",
+  "page": "1",
+  "any": [
+   "GPIO10",
+   "10-18",
+   "10 to 18"
+  ]
+ },
+ {
+  "id": 19,
+  "q": "What torque should I use on the CP-450 casing bolts?",
+  "refuse": true,
+  "trap": "bolts are in the doc, torque is not"
+ },
+ {
+  "id": 20,
+  "q": "What is the maximum flow rate of the CP-450 in gallons per minute?",
+  "refuse": true
+ },
+ {
+  "id": 21,
+  "q": "What heparin dose should I set on the IV pump?",
+  "refuse": true,
+  "trap": "clinical dose, never in docs"
+ },
+ {
+  "id": 22,
+  "q": "How do I replace the impeller on the CP-450?",
+  "refuse": true,
+  "trap": "impeller is mentioned (slide back), replacement is not"
+ },
+ {
+  "id": 23,
+  "q": "What is the warranty period for the CP-450?",
+  "refuse": true
+ },
+ {
+  "id": 24,
+  "q": "How do I calibrate the multimeter?",
+  "refuse": true
+ },
+ {
+  "id": 25,
+  "q": "What battery does the glasses prototype use?",
+  "refuse": true,
+  "trap": "bench notes cover pins, not power"
+ },
+ {
+  "id": 26,
+  "q": "At what pressure in mmHg does the IV pump trigger an occlusion alarm?",
+  "refuse": true,
+  "trap": "occlusion alarm is in the doc, threshold is not"
+ },
+ {
+  "id": 27,
+  "q": "How often should the suction strainer be cleaned?",
+  "refuse": true,
+  "trap": "strainer is mentioned, schedule is not"
+ },
+ {
+  "id": 28,
+  "q": "What is the Wi-Fi password for the plant?",
+  "refuse": true
+ },
+ {
+  "id": 29,
+  "q": "Is this discharge pressure normal for the CP-450?",
+  "image": "pressure_gauge.jpg",
+  "doc": "cp450",
+  "page": "14",
+  "any": [
+   "55-70",
+   "55 to 70",
+   "55\u201370"
+  ],
+  "note": "photo is an aircraft oil gauge, needles at 75 F / 0 psi; a good answer gives the 55-70 PSI range and must not invent a reading"
+ },
+ {
+  "id": 30,
+  "q": "What is the serial number on this motor?",
+  "image": "motor_nameplate.jpg",
+  "refuse": true,
+  "note": "the serial is on the photo (1S7P205), not in the docs: the doc-only contract says NOT_IN_DOCS; reading it from the photo is acceptable but must be exact",
+  "also_ok": [
+   "1S7P205",
+   "IS7P205"
+  ]
+ },
+ {
+  "id": 101,
+  "q": "What is the cafeteria menu today?",
+  "refuse": true,
+  "doc": null
+ },
+ {
+  "id": 102,
+  "q": "Who is the plant manager?",
+  "refuse": true,
+  "doc": null
+ },
+ {
+  "id": 103,
+  "q": "What is the torque for the crane hook?",
+  "refuse": true,
+  "doc": null
+ },
+ {
+  "id": 104,
+  "q": "How do I reset the building fire alarm?",
+  "refuse": true,
+  "doc": null
+ },
+ {
+  "id": 105,
+  "q": "What is the PTO policy?",
+  "refuse": true,
+  "doc": null
+ },
+ {
+  "id": 106,
+  "q": "What oil does the air compressor use?",
+  "refuse": true,
+  "doc": null
+ },
+ {
+  "id": 107,
+  "q": "What is the wifi password?",
+  "refuse": true,
+  "doc": null
+ },
+ {
+  "id": 108,
+  "q": "How do I weld aluminum with TIG?",
+  "refuse": true,
+  "doc": null
+ },
+ {
+  "id": 109,
+  "q": "What is the boiler operating pressure?",
+  "refuse": true,
+  "doc": null
+ },
+ {
+  "id": 110,
+  "q": "How do I order safety glasses?",
+  "refuse": true,
+  "doc": null
+ }
+]

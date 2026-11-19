@@ -1,0 +1,407 @@
+{
+ "symptoms": [
+  {
+   "name": "Pump runs, but no water delivered",
+   "quote": "Pump runs, but no water delivered",
+   "causes": [
+    {
+     "name": "Mechanical C. Pump lost prime",
+     "fix": "Reprime. Inspect suction system for air leaks.",
+     "quote": "C. Pump lost prime. Reprime. Inspect suction system for air leaks.",
+     "quote_on_page": true
+    },
+    {
+     "name": "System A. Pressure required by system at design flow rate exceeds pressure rating of pump",
+     "fix": "Compare pump pressure and flow rate against pump characteristic curve. Check for closed or partially closed valve in discharge piping system. Reduce system pressure requirement. Increase pressure capability of pump.",
+     "quote": "A. Pressure required by system at design flow rate exceeds pressure rating of pump. Compare pump pressure and flow rate against pump characteristic curve. Check for closed or partially closed valve in discharge piping system. Reduce system pressure requirement. Increase pressure capability of pump.",
+     "quote_on_page": false
+    }
+   ],
+   "quote_on_page": true
+  },
+  {
+   "name": "Not enough water delivered",
+   "quote": "Not enough water delivered",
+   "causes": [
+    {
+     "name": "Electrical A. No voltage in power system",
+     "fix": "Check phase-to-phase on line side of starter contactor.",
+     "quote": "A. No voltage in power system. Check phase-to-phase on line side of starter contactor.",
+     "quote_on_page": false
+    },
+    {
+     "name": "Electrical B. No voltage on one phase (Three Phase units)",
+     "fix": "Check circuit breaker or fuses. Check phase voltage on line side of starter contactor. Isolate open circuit (circuit breaker, fuse, broken connections, etc.)",
+     "quote": "B. No voltage on one phase (Three Phase units). Check circuit breaker or fuses. Check phase voltage on line side of starter contactor. Isolate open circuit (circuit breaker, fuse, broken connections, etc.)",
+     "quote_on_page": false
+    },
+    {
+     "name": "Electrical C. Low voltage at motor",
+     "fix": "Running voltage across each leg of motor must be ±10% of nominal voltage shown on nameplate.",
+     "quote": "C. Low voltage at motor. Running voltage across each leg of motor must be ±10% of nominal voltage shown on nameplate.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical D. Motor leads improperly grouped for voltage",
+     "fix": "Refer to lead grouping diagram on motor nameplate.",
+     "quote": "D. Motor leads improperly grouped for voltage. Refer to lead grouping diagram on motor nameplate.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical E. Control failure",
+     "fix": "Check control device, starter contactor, H-O-A selector switch, etc., for malfunction.",
+     "quote": "E. Control failure. Check control device, starter contactor, H-O-A selector switch, etc., for malfunction.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical F. Thermal overload switch open",
+     "fix": "Check phase-to-phase on line side of starter contactor.",
+     "quote": "F. Thermal overload switch open Check phase-to-phase on line side of starter contactor.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical G. Installation failure",
+     "fix": "Check motor or windings to ground with megohmmeter.",
+     "quote": "G. Installation failure. Check motor or windings to ground with megohmmeter.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical H. Open windings",
+     "fix": "Check leg-to-leg with ohmmeter.",
+     "quote": "H. Open windings. Check leg-to-leg with ohmmeter.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Mechanical A. Flow through pump completely or partially obstructed",
+     "fix": "Locate and remove obstruction. Refer to repair instructions for disassembly.",
+     "quote": "A. Flow through pump completely or partially obstructed. Locate and remove obstruction. Refer to repair instructions for disassembly.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Mechanical B. Wrong direction of rotation",
+     "fix": "Reverse rotation of three phase motor by interchanging any two leads. See manufacturer’s instructions for reversing single phase motor.",
+     "quote": "B. Wrong direction of rotation. Reverse rotation of three phase motor by interchanging any two leads. See manufacturer’s instructions for reversing single phase motor.",
+     "quote_on_page": false
+    },
+    {
+     "name": "Mechanical C. Pump lost prime",
+     "fix": "Reprime. Inspect suction system for air leaks.",
+     "quote": "C. Pump lost prime. Reprime. Inspect suction system for air leaks.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Mechanical D. Internal leakage",
+     "fix": "Check impeller for wear of controlled clearances (See Repair Instructions).",
+     "quote": "D. Internal leakage. Check impeller for wear of controlled clearances (See Repair Instructions).",
+     "quote_on_page": true
+    },
+    {
+     "name": "Mechanical E. Loose parts",
+     "fix": "Inspect. Repair.",
+     "quote": "E. Loose parts Inspect. Repair.",
+     "quote_on_page": true
+    },
+    {
+     "name": "System A. Pressure required by system at design flow rate exceeds pressure rating of pump",
+     "fix": "Compare pump pressure and flow rate against pump characteristic curve. Check for closed or partially closed valve in discharge piping system. Reduce system pressure requirement. Increase pressure capability of pump.",
+     "quote": "A. Pressure required by system at design flow rate exceeds pressure rating of pump. Compare pump pressure and flow rate against pump characteristic curve. Check for closed or partially closed valve in discharge piping system. Reduce system pressure requirement. Increase pressure capability of pump.",
+     "quote_on_page": false
+    },
+    {
+     "name": "System B. Obstruction in suction piping",
+     "fix": "Locate and remove obstruction. Compare pump pressure and flow rate against pump characteristic curve.",
+     "quote": "B. Obstruction in suction piping Locate and remove obstruction. Compare pump pressure and flow rate against pump characteristic curve.",
+     "quote_on_page": false
+    }
+   ],
+   "quote_on_page": true
+  },
+  {
+   "name": "Not enough pressure",
+   "quote": "Not enough pressure",
+   "causes": [
+    {
+     "name": "Electrical A. No voltage in power system",
+     "fix": "Check phase-to-phase on line side of starter contactor.",
+     "quote": "A. No voltage in power system. Check phase-to-phase on line side of starter contactor.",
+     "quote_on_page": false
+    },
+    {
+     "name": "Electrical B. No voltage on one phase (Three Phase units)",
+     "fix": "Check circuit breaker or fuses. Check phase voltage on line side of starter contactor. Isolate open circuit (circuit breaker, fuse, broken connections, etc.)",
+     "quote": "B. No voltage on one phase (Three Phase units). Check circuit breaker or fuses. Check phase voltage on line side of starter contactor. Isolate open circuit (circuit breaker, fuse, broken connections, etc.)",
+     "quote_on_page": false
+    },
+    {
+     "name": "Electrical C. Low voltage at motor",
+     "fix": "Running voltage across each leg of motor must be ±10% of nominal voltage shown on nameplate.",
+     "quote": "C. Low voltage at motor. Running voltage across each leg of motor must be ±10% of nominal voltage shown on nameplate.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical D. Motor leads improperly grouped for voltage",
+     "fix": "Refer to lead grouping diagram on motor nameplate.",
+     "quote": "D. Motor leads improperly grouped for voltage. Refer to lead grouping diagram on motor nameplate.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical E. Control failure",
+     "fix": "Check control device, starter contactor, H-O-A selector switch, etc., for malfunction.",
+     "quote": "E. Control failure. Check control device, starter contactor, H-O-A selector switch, etc., for malfunction.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical F. Thermal overload switch open",
+     "fix": "Check phase-to-phase on line side of starter contactor.",
+     "quote": "F. Thermal overload switch open Check phase-to-phase on line side of starter contactor.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical G. Installation failure",
+     "fix": "Check motor or windings to ground with megohmmeter.",
+     "quote": "G. Installation failure. Check motor or windings to ground with megohmmeter.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical H. Open windings",
+     "fix": "Check leg-to-leg with ohmmeter.",
+     "quote": "H. Open windings. Check leg-to-leg with ohmmeter.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Mechanical A. Flow through pump completely or partially obstructed",
+     "fix": "Locate and remove obstruction. Refer to repair instructions for disassembly.",
+     "quote": "A. Flow through pump completely or partially obstructed. Locate and remove obstruction. Refer to repair instructions for disassembly.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Mechanical B. Wrong direction of rotation",
+     "fix": "Reverse rotation of three phase motor by interchanging any two leads. See manufacturer’s instructions for reversing single phase motor.",
+     "quote": "B. Wrong direction of rotation. Reverse rotation of three phase motor by interchanging any two leads. See manufacturer’s instructions for reversing single phase motor.",
+     "quote_on_page": false
+    },
+    {
+     "name": "Mechanical C. Pump lost prime",
+     "fix": "Reprime. Inspect suction system for air leaks.",
+     "quote": "C. Pump lost prime. Reprime. Inspect suction system for air leaks.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Mechanical D. Internal leakage",
+     "fix": "Check impeller for wear of controlled clearances (See Repair Instructions).",
+     "quote": "D. Internal leakage. Check impeller for wear of controlled clearances (See Repair Instructions).",
+     "quote_on_page": true
+    },
+    {
+     "name": "Mechanical E. Loose parts",
+     "fix": "Inspect. Repair.",
+     "quote": "E. Loose parts Inspect. Repair.",
+     "quote_on_page": true
+    },
+    {
+     "name": "System A. Pressure required by system at design flow rate exceeds pressure rating of pump",
+     "fix": "Compare pump pressure and flow rate against pump characteristic curve. Check for closed or partially closed valve in discharge piping system. Reduce system pressure requirement. Increase pressure capability of pump.",
+     "quote": "A. Pressure required by system at design flow rate exceeds pressure rating of pump. Compare pump pressure and flow rate against pump characteristic curve. Check for closed or partially closed valve in discharge piping system. Reduce system pressure requirement. Increase pressure capability of pump.",
+     "quote_on_page": false
+    },
+    {
+     "name": "System B. Obstruction in suction piping",
+     "fix": "Locate and remove obstruction. Compare pump pressure and flow rate against pump characteristic curve.",
+     "quote": "B. Obstruction in suction piping Locate and remove obstruction. Compare pump pressure and flow rate against pump characteristic curve.",
+     "quote_on_page": false
+    }
+   ],
+   "quote_on_page": true
+  },
+  {
+   "name": "Excessive vibration",
+   "quote": "Excessive vibration",
+   "causes": [
+    {
+     "name": "Mechanical B. Wrong direction of rotation",
+     "fix": "Reverse rotation of three phase motor by interchanging any two leads. See manufacturer’s instructions for reversing single phase motor.",
+     "quote": "B. Wrong direction of rotation. Reverse rotation of three phase motor by interchanging any two leads. See manufacturer’s instructions for reversing single phase motor.",
+     "quote_on_page": false
+    },
+    {
+     "name": "Mechanical C. Pump lost prime",
+     "fix": "Reprime. Inspect suction system for air leaks.",
+     "quote": "C. Pump lost prime. Reprime. Inspect suction system for air leaks.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Mechanical E. Loose parts",
+     "fix": "Inspect. Repair.",
+     "quote": "E. Loose parts Inspect. Repair.",
+     "quote_on_page": true
+    },
+    {
+     "name": "System C. Pressure rating of pump exceeds pressure requirement of system at design flow rate",
+     "fix": "Compare pump pressure and flow rate against pump characteristic curve. Inspect discharge piping system for breaks, leaks, open by-pass valves, etc. If necessary, reduce flow rate by partially closing discharge valve.",
+     "quote": "C. Pressure rating of pump exceeds pressure requirement of system at design flow rate. Compare pump pressure and flow rate against pump characteristic curve. Inspect discharge piping system for breaks, leaks, open by-pass valves, etc. If necessary, reduce flow rate by partially closing discharge valve.",
+     "quote_on_page": false
+    }
+   ],
+   "quote_on_page": true
+  },
+  {
+   "name": "Abnormal noise",
+   "quote": "Abnormal noise",
+   "causes": [
+    {
+     "name": "Mechanical B. Wrong direction of rotation",
+     "fix": "Reverse rotation of three phase motor by interchanging any two leads. See manufacturer’s instructions for reversing single phase motor.",
+     "quote": "B. Wrong direction of rotation. Reverse rotation of three phase motor by interchanging any two leads. See manufacturer’s instructions for reversing single phase motor.",
+     "quote_on_page": false
+    },
+    {
+     "name": "Mechanical C. Pump lost prime",
+     "fix": "Reprime. Inspect suction system for air leaks.",
+     "quote": "C. Pump lost prime. Reprime. Inspect suction system for air leaks.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Mechanical D. Internal leakage",
+     "fix": "Check impeller for wear of controlled clearances (See Repair Instructions).",
+     "quote": "D. Internal leakage. Check impeller for wear of controlled clearances (See Repair Instructions).",
+     "quote_on_page": true
+    },
+    {
+     "name": "Mechanical E. Loose parts",
+     "fix": "Inspect. Repair.",
+     "quote": "E. Loose parts Inspect. Repair.",
+     "quote_on_page": true
+    },
+    {
+     "name": "System A. Pressure required by system at design flow rate exceeds pressure rating of pump",
+     "fix": "Compare pump pressure and flow rate against pump characteristic curve. Check for closed or partially closed valve in discharge piping system. Reduce system pressure requirement. Increase pressure capability of pump.",
+     "quote": "A. Pressure required by system at design flow rate exceeds pressure rating of pump. Compare pump pressure and flow rate against pump characteristic curve. Check for closed or partially closed valve in discharge piping system. Reduce system pressure requirement. Increase pressure capability of pump.",
+     "quote_on_page": false
+    },
+    {
+     "name": "System B. Obstruction in suction piping",
+     "fix": "Locate and remove obstruction. Compare pump pressure and flow rate against pump characteristic curve.",
+     "quote": "B. Obstruction in suction piping Locate and remove obstruction. Compare pump pressure and flow rate against pump characteristic curve.",
+     "quote_on_page": false
+    },
+    {
+     "name": "System C. Pressure rating of pump exceeds pressure requirement of system at design flow rate",
+     "fix": "Compare pump pressure and flow rate against pump characteristic curve. Inspect discharge piping system for breaks, leaks, open by-pass valves, etc. If necessary, reduce flow rate by partially closing discharge valve.",
+     "quote": "C. Pressure rating of pump exceeds pressure requirement of system at design flow rate. Compare pump pressure and flow rate against pump characteristic curve. Inspect discharge piping system for breaks, leaks, open by-pass valves, etc. If necessary, reduce flow rate by partially closing discharge valve.",
+     "quote_on_page": false
+    }
+   ],
+   "quote_on_page": true
+  },
+  {
+   "name": "Pump stops",
+   "quote": "Pump stops",
+   "causes": [
+    {
+     "name": "Electrical A. No voltage in power system",
+     "fix": "Check phase-to-phase on line side of starter contactor.",
+     "quote": "A. No voltage in power system. Check phase-to-phase on line side of starter contactor.",
+     "quote_on_page": false
+    },
+    {
+     "name": "Electrical B. No voltage on one phase (Three Phase units)",
+     "fix": "Check circuit breaker or fuses. Check phase voltage on line side of starter contactor. Isolate open circuit (circuit breaker, fuse, broken connections, etc.)",
+     "quote": "B. No voltage on one phase (Three Phase units). Check circuit breaker or fuses. Check phase voltage on line side of starter contactor. Isolate open circuit (circuit breaker, fuse, broken connections, etc.)",
+     "quote_on_page": false
+    },
+    {
+     "name": "Electrical C. Low voltage at motor",
+     "fix": "Running voltage across each leg of motor must be ±10% of nominal voltage shown on nameplate.",
+     "quote": "C. Low voltage at motor. Running voltage across each leg of motor must be ±10% of nominal voltage shown on nameplate.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical D. Motor leads improperly grouped for voltage",
+     "fix": "Refer to lead grouping diagram on motor nameplate.",
+     "quote": "D. Motor leads improperly grouped for voltage. Refer to lead grouping diagram on motor nameplate.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical E. Control failure",
+     "fix": "Check control device, starter contactor, H-O-A selector switch, etc., for malfunction.",
+     "quote": "E. Control failure. Check control device, starter contactor, H-O-A selector switch, etc., for malfunction.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical F. Thermal overload switch open",
+     "fix": "Check phase-to-phase on line side of starter contactor.",
+     "quote": "F. Thermal overload switch open Check phase-to-phase on line side of starter contactor.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical G. Installation failure",
+     "fix": "Check motor or windings to ground with megohmmeter.",
+     "quote": "G. Installation failure. Check motor or windings to ground with megohmmeter.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical H. Open windings",
+     "fix": "Check leg-to-leg with ohmmeter.",
+     "quote": "H. Open windings. Check leg-to-leg with ohmmeter.",
+     "quote_on_page": true
+    }
+   ],
+   "quote_on_page": true
+  },
+  {
+   "name": "Overheating",
+   "quote": "Overheating",
+   "causes": [
+    {
+     "name": "Electrical B. No voltage on one phase (Three Phase units)",
+     "fix": "Check circuit breaker or fuses. Check phase voltage on line side of starter contactor. Isolate open circuit (circuit breaker, fuse, broken connections, etc.)",
+     "quote": "B. No voltage on one phase (Three Phase units). Check circuit breaker or fuses. Check phase voltage on line side of starter contactor. Isolate open circuit (circuit breaker, fuse, broken connections, etc.)",
+     "quote_on_page": false
+    },
+    {
+     "name": "Electrical C. Low voltage at motor",
+     "fix": "Running voltage across each leg of motor must be ±10% of nominal voltage shown on nameplate.",
+     "quote": "C. Low voltage at motor. Running voltage across each leg of motor must be ±10% of nominal voltage shown on nameplate.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Electrical D. Motor leads improperly grouped for voltage",
+     "fix": "Refer to lead grouping diagram on motor nameplate.",
+     "quote": "D. Motor leads improperly grouped for voltage. Refer to lead grouping diagram on motor nameplate.",
+     "quote_on_page": true
+    },
+    {
+     "name": "Mechanical C. Pump lost prime",
+     "fix": "Reprime. Inspect suction system for air leaks.",
+     "quote": "C. Pump lost prime. Reprime. Inspect suction system for air leaks.",
+     "quote_on_page": true
+    },
+    {
+     "name": "System A. Pressure required by system at design flow rate exceeds pressure rating of pump",
+     "fix": "Compare pump pressure and flow rate against pump characteristic curve. Check for closed or partially closed valve in discharge piping system. Reduce system pressure requirement. Increase pressure capability of pump.",
+     "quote": "A. Pressure required by system at design flow rate exceeds pressure rating of pump. Compare pump pressure and flow rate against pump characteristic curve. Check for closed or partially closed valve in discharge piping system. Reduce system pressure requirement. Increase pressure capability of pump.",
+     "quote_on_page": false
+    },
+    {
+     "name": "System B. Obstruction in suction piping",
+     "fix": "Locate and remove obstruction. Compare pump pressure and flow rate against pump characteristic curve.",
+     "quote": "B. Obstruction in suction piping Locate and remove obstruction. Compare pump pressure and flow rate against pump characteristic curve.",
+     "quote_on_page": false
+    },
+    {
+     "name": "System C. Pressure rating of pump exceeds pressure requirement of system at design flow rate",
+     "fix": "Compare pump pressure and flow rate against pump characteristic curve. Inspect discharge piping system for breaks, leaks, open by-pass valves, etc. If necessary, reduce flow rate by partially closing discharge valve.",
+     "quote": "C. Pressure rating of pump exceeds pressure requirement of system at design flow rate. Compare pump pressure and flow rate against pump characteristic curve. Inspect discharge piping system for breaks, leaks, open by-pass valves, etc. If necessary, reduce flow rate by partially closing discharge valve.",
+     "quote_on_page": false
+    }
+   ],
+   "quote_on_page": true
+  }
+ ],
+ "reviewed": false,
+ "drafted_by": "LLM (NIM)",
+ "source": {
+  "page": "17",
+  "url": "https://www.pentair.com/content/dam/extranet/web/nam/sta-rite/manuals/sx218-close-coupled-motor-centrifugal-pump-iom.pdf"
+ }
+}
