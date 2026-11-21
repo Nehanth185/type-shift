@@ -209,8 +209,12 @@ def main(argv=None, out=print):
     ref = load_levels(a.levels, key)
     out(f"{a.wav}: {len(x) / E.SR:.1f} s -> {PASS_SECONDS:.0f}-second passes, machine '{a.asset}' on {a.server}")
     try:
-        if http_machine(a.server, a.workspace, a.asset, a.token) is None and ref.levels:
-            out("the server has never heard this machine: old level reference dropped")
+        m = http_machine(a.server, a.workspace, a.asset, a.token)
+        # The reference is stale when the server has no such machine, or is learning a baseline from fewer passes
+        # than the reference holds (someone said "relearn"): keeping it would reject the new healthy level forever.
+        if ref.levels and (m is None or (m.get("state") == "LEARNING" and len(ref.levels) > (m.get("baseline_passes") or 0))):
+            out("the server " + ("has never heard this machine" if m is None else "is relearning this machine")
+                + ": old level reference dropped")
             ref.levels.clear()
         out("healthy level reference: " + (f"{ref.value:.0f} dBFS ({len(ref.levels)} learned passes)"
                                            if ref.value is not None else "none yet (set by the first accepted learning passes)"))

@@ -7,6 +7,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import numpy as np
 import pytest
 
+from conftest import say
 from worker_os import ear_app
 from worker_os import ear_engine as E
 from worker_os import ear_gate as G
@@ -378,6 +379,27 @@ def test_command_line_drops_a_stale_level_reference_for_a_machine_the_server_nev
     assert saved["other"] == [-20.0] * 3
     code, text = run_main(client, monkeypatch, tmp_path, [str(w), "--asset", "fan-new"])       # known now: kept
     assert code == 0 and "old level reference dropped" not in text and "(10 learned passes)" in text
+
+
+def test_command_line_drops_the_level_reference_when_the_server_relearns_the_machine(client, monkeypatch, tmp_path):
+    w = tmp_path / "h.wav"; w.write_bytes(E.to_wav(recording(["ok"] * 11)))
+    far = tmp_path / "far.wav"; far.write_bytes(E.to_wav(recording(["far"] * 11, seed0=30)))    # same fan, mic moved: -20 dB
+    key = "http://test|demo|p-12"
+    assert run_main(client, monkeypatch, tmp_path, [str(w), "--asset", "P-12", "--expect", "healthy"])[0] == 0
+    code, text = run_main(client, monkeypatch, tmp_path, [str(far), "--asset", "P-12"])
+    assert "passes sent:     0" in text and "level_off_reference: 11" in text           # gated against the old level
+    say(client, "relearn", app="machine_ear")                                              # a person resets P-12
+    code, text = run_main(client, monkeypatch, tmp_path, [str(far), "--asset", "P-12", "--expect", "healthy"])
+    assert code == 0 and "is relearning this machine: old level reference dropped" in text, text
+    assert "passes sent:     11" in text and "passes rejected: 0" in text
+    saved = json.loads((tmp_path / "levels.json").read_text())[key]
+    assert len(saved) == 10 and abs(np.median(saved) - G.level_dbfs(BAD["far"](0))) < 1.0
+    # a learning round this harness is in the middle of keeps its reference (4 learned, 4 known to the server)
+    say(client, "relearn", app="machine_ear")
+    w4 = tmp_path / "h4.wav"; w4.write_bytes(E.to_wav(recording(["ok"] * 4)))
+    assert "old level reference dropped" in run_main(client, monkeypatch, tmp_path, [str(w4), "--asset", "P-12"])[1]
+    code, text = run_main(client, monkeypatch, tmp_path, [str(w4), "--asset", "P-12"])
+    assert "old level reference dropped" not in text and "(4 learned passes)" in text, text
 
 
 def test_http_machine_reads_status_and_reports_refusals(http, monkeypatch):
