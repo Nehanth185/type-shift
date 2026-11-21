@@ -288,6 +288,23 @@ def test_a_new_baseline_restarts_the_level_reference(client):
     assert len(ref.levels) == 3 and abs(ref.value - G.level_dbfs(machine(0))) < 1.0
 
 
+def test_an_alert_from_before_the_recording_is_not_counted_as_a_detection(client):
+    quiet = lambda *_: None
+    R.replay(recording(["ok"] * 10), sender(client), asset="fan-g", out=quiet)
+    assert R.replay(recording(["ok"] * 4, fault=1.0, seed0=40), sender(client), asset="fan-g", out=quiet)["alerted"]
+    s = R.replay(recording(["ok"] * 4, seed0=60), sender(client), asset="fan-g", out=quiet)    # healthy sound, latched ALERT
+    assert s["state"] == "ALERT" and not s["alerted"] and s["alert_before"]
+    assert not any(r["odd"] for r in s["rows"])
+    for expect in ("faulty", "healthy"):
+        ok, line = R.verdict(s, expect)
+        assert ok is False and "already in ALERT before this recording" in line
+    # a faulty recording played as "healthy" on a machine that was NOT in ALERT is a false alarm
+    R.replay(recording(["ok"] * 10), sender(client), asset="fan-h", out=quiet)
+    f = R.replay(recording(["ok"] * 4, fault=1.0, seed0=40), sender(client), asset="fan-h", out=quiet)
+    assert f["alerted"] and not f["alert_before"]
+    assert R.verdict(f, "healthy") == (False, "healthy recording raised an ALERT (false alarm)")
+
+
 def test_server_errors_are_reported_and_not_counted_as_sent():
     lines, ref = [], G.LevelRef()
     s = R.replay(recording(["ok", "talk", "ok"]), lambda body: (422, {"detail": "nope"}), asset="fan-g", ref=ref,
@@ -401,9 +418,10 @@ def test_command_line_healthy_then_faulty_keeps_the_level_file(client, monkeypat
     assert code == 0, text
     assert "healthy level reference: -24 dBFS (10 learned passes)" in text      # read back from the file
     assert "level_off_reference: 1  (pass 3)" in text and "RESULT: PASS (the fault raised an ALERT)" in text
-    # the faulty recording played as "healthy" must FAIL (false alarm), exit code 1
-    code, text = run_main(client, monkeypatch, tmp_path, [str(fw), "--asset", "Desk-Fan", "--expect", "healthy"])
-    assert code == 1 and "RESULT: FAIL (healthy recording raised an ALERT (false alarm))" in text
+    # the machine is in ALERT now: a further run cannot be judged either way, exit code 1
+    for expect in ("healthy", "faulty"):
+        code, text = run_main(client, monkeypatch, tmp_path, [str(fw), "--asset", "Desk-Fan", "--expect", expect])
+        assert code == 1 and "RESULT: FAIL (the machine was already in ALERT before this recording" in text, text
     # a second machine goes into the same level file without touching the first
     code, _ = run_main(client, monkeypatch, tmp_path, [str(hw), "--asset", "fan-2"])
     assert code == 0 and set(json.loads((tmp_path / "levels.json").read_text())) == {

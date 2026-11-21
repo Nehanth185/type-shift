@@ -58,6 +58,8 @@ python ear_tools/replay.py /path/to/faulty.wav  --asset desk-fan-1 --expect faul
 ```
 
 To repeat the test, use a new name (`--asset desk-fan-2`): a machine keeps its baseline on the server.
+A machine also stays in ALERT until a person clears it, so a run on a machine that is already in ALERT prints
+`RESULT: FAIL (the machine was already in ALERT before this recording ...)`.
 If the server is on another port or machine, add `--server http://host:port`.
 
 ## 4. Read the result

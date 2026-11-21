@@ -105,7 +105,7 @@ def replay(x, send, *, asset, model="", workspace="demo", worker="replay", ref=N
     gate accepted AND the server learned from. Returns the summary dict (see summarize())."""
     ref = ref if ref is not None else G.LevelRef()
     passes, left = cut(x, seconds)
-    rows, state, alerted = [], None, False
+    rows, state, alerted, alert_before = [], None, False, False
     for i, p in enumerate(passes, 1):
         when = f"{_t((i - 1) * seconds)}-{_t(i * seconds)}"
         row = {"n": i, "at": when, "status": SENT, "reasons": [], "why": "", "level_db": None, "score": None,
@@ -126,27 +126,34 @@ def replay(x, send, *, asset, model="", workspace="demo", worker="replay", ref=N
         info, state = j.get("pass") or {}, j.get("state")
         row.update(score=info.get("score"), pct=info.get("pct"), odd=info.get("odd"), state=state,
                    baseline_passes=(j.get("machine") or {}).get("baseline_passes"))
-        alerted = alerted or state == "ALERT"
+        if state == "ALERT":                                # ALERT stays until a person clears it: only a pass that
+            if j.get("prev_state") == "ALERT": alert_before = alert_before or not alerted    # moved INTO it counts
+            else: alerted = True
         if j.get("prev_state") == "LEARNING":               # the server learned from this pass: it defines the level
             if row["baseline_passes"] == 1: ref.levels.clear()      # a fresh baseline started
             ref.add(v.level_db)
         out(f"pass {i:>3}  {when}  SENT      {score_text(row)}  -> {state}")
         rows.append(row)
-    return summarize(rows, left, state, alerted)
+    return summarize(rows, left, state, alerted, alert_before)
 
 
-def summarize(rows, left=0.0, state=None, alerted=False):
+def summarize(rows, left=0.0, state=None, alerted=False, alert_before=False):
+    """alerted: this recording moved the machine into ALERT. alert_before: it was in ALERT before the recording."""
     why = OrderedDict()
     for r in rows:
         for c in r["reasons"]: why.setdefault(c, []).append(r["n"])
     return {"passes": len(rows), "sent": sum(r["status"] == SENT for r in rows),
             "rejected": sum(r["status"] == REJECTED for r in rows), "errors": sum(r["status"] == ERROR for r in rows),
-            "rejected_why": dict(why), "leftover_s": round(left, 2), "state": state, "alerted": alerted, "rows": rows}
+            "rejected_why": dict(why), "leftover_s": round(left, 2), "state": state, "alerted": alerted, "alert_before": alert_before,
+            "rows": rows}
 
 
 def verdict(s, expect):
     """(passed, sentence) for --expect healthy | faulty."""
     if not s["sent"]: return False, "no pass was sent, nothing was tested"
+    if s.get("alert_before"):
+        return False, ("the machine was already in ALERT before this recording, nothing was tested: "
+                       "clear the alert or use a new --asset name")
     if expect == "healthy":
         if s["alerted"]: return False, "healthy recording raised an ALERT (false alarm)"
         if s["state"] == "LEARNING":
