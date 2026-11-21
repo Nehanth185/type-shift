@@ -4,3 +4,4 @@ server/logs/
 server/__pycache__/
 server/answer.wav
 server/data/
+os/ear_levels.json
