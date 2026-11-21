@@ -1,5 +1,9 @@
 # Changelog: prototype/v0 software
 
+## 2026-11-20: Machine Ear pass quality gate + replay harness (untested on a real mic)
+
+`os/ear_gate.py` rejects a 3-second pass that has talking, clipping or a wrong level, and says why. `os/ear_tools/replay.py` cuts a WAV into 3-second passes, gates each, posts the good ones to `/os/ear/pass` and prints passes sent, passes rejected with reasons, and the score of every pass (`--expect healthy|faulty` prints PASS/FAIL). A rejected pass is never sent, so it cannot change a baseline. The server, the engine and the OS are unchanged: the gate runs in the harness only, other clients are not gated. `os/DESK_FAN_TEST.md` has the desk-fan steps. Tests: `os/tests/test_ear_gate_replay.py` (synthetic audio). **Not run on a real microphone or a real machine.**
+
 ## 2026-11-18: Machine Ear fan test + noise work (v2, opt-in)
 
 Fan test: MIMII fan id_00/id_02 at 6/0/-6 dB, plus pumps id_00/id_02 at 0 and -6 dB (`os/ear_tools/ear_eval_v2.py`, `eval/ear_v2_cells.json`, `ear_results.json["v2"]`). New `ear_engine.embed_pass()` + baseline noise-floor subtraction (v2), tuned on pump id_04 only. Held-out result is **mixed**: fans better (e.g. fan id_02 -6 dB AUC 0.643 → 0.727, walk-by 1% → 24%), pumps at real -6 dB **worse** (id_00 0.773 → 0.727, walk-by 26% → 2%). So v2 is **opt-in** (`MACHINE_EAR_FEATURES=v2`); app default stays v1. Old v1 baselines keep working. `step()` gained an optional evidence rule (off). No change to `/os/input` or the manifest. OS tests 146 → 157, server 131 unchanged. Details: `os/MACHINE_EAR.md` (v2 section).

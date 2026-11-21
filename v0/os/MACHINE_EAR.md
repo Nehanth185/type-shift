@@ -177,6 +177,7 @@ not re-score the test set. Pump id_00 has now been scored 4 times in total since
 | `tests/test_machine_ear.py` | 23 tests: engine, state machine, API, tap → Navigator, false alarm/relearn, fix → label, no audio/worker stored, HUD limits, MIMII walk-by |
 | `tests/test_machine_ear_v2.py` | 11 tests: v2 sketch shape/gain/no time order, sketch subtraction ≈ framewise, v2 baseline + JSON + dim guard, v1 baselines still load, evidence rule off by default, app default v1, opt-in v2, old v1 machine keeps scoring |
 | `ear_tools/ear_eval_v2.py` → `eval/ear_v2_cells.json` + `ear_results.json["v2"]` | v1 vs v2, pump + fan, 6/0/-6 dB (resumable) |
+| `ear_gate.py`, `ear_tools/replay.py`, `DESK_FAN_TEST.md` | Pass quality gate (talking, clipping, level) + replay harness for a recorded WAV + the desk-fan test steps. Harness-side only (the server does not gate). **Untested on a real mic.** |
 | `ear_tools/fetch_mimii.py`, `remote_zip.py` | Free subset download via HTTP range requests (no full 8 GB zip) |
 | `ear_tools/ear_eval.py` → `eval/ear_results.json` | The tables above (`--ae` adds the autoencoder) |
 | `ear_tools/split_pump_id00.json`, `split_pump_id02.json` | Fixed train/test splits |
